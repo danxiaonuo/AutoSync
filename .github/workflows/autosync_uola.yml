@@ -21,7 +21,7 @@ on:
 # 环境变量
 env:
    # 源码仓库地址
-   REPO_URL: https://github.com/project-openwrt/routing
+   REPO_URL: https://github.com/project-openwrt/openwrt
    # 源码分支
    REPO_BRANCH: master
    # 时区设置
@@ -36,6 +36,8 @@ env:
    GITHUB_RROJECT: github.com/danxiaonuo/default-settings.git
    # 分支
    BRANCH: master
+   # 自定义执行脚本名称
+   DIY_SH: scripts/uola-extra-openwrt.sh
    
    # 任务集
 jobs:
@@ -64,10 +66,8 @@ jobs:
     # 克隆源码
     - name: 克隆源码
       run: |
-        svn co https://github.com/danxiaonuo/AutoBuild-OpenWrt/trunk/server/default-settings default-settings
-        #git clone $REPO_URL -b $REPO_BRANCH packages
-        #cd packages
-        cd default-settings
+        git clone $REPO_URL -b $REPO_BRANCH uola
+        cd uola
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
       
     # 上传到分支
@@ -75,8 +75,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: |
-          #cd packages/
-          cd default-settings
+          cd uola/
           git config core.ignorecase false
           git init
           git config user.name $GITHUB_USER_NAME
