@@ -41,3 +41,4 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoBuild-OpenWrt/master
 cd package
 mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
 rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
+rm -rf xiaonuo/luci-theme-argon*
