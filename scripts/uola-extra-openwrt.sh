@@ -1,3 +1,6 @@
+sed -i "s#DISTRIB_ID='.*'#DISTRIB_ID='danxiaonuo'#g" package/base-files/files/etc/openwrt_release
+sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='R1.1.1'#g" package/base-files/files/etc/openwrt_release
+sed -i "s#DISTRIB_DESCRIPTION='.*'#DISTRIB_DESCRIPTION='danxiaonuo'#g" package/base-files/files/etc/openwrt_release
 # 修改默认登陆IP地址
 sed -i 's/192.168.1.1/10.8.1.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168/10.8/g' package/base-files/files/bin/config_generate
