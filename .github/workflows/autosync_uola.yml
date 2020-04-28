@@ -33,7 +33,7 @@ env:
    # Github 邮箱
    GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
    # Github
-   GITHUB_RROJECT: github.com/danxiaonuo/default-settings.git
+   GITHUB_RROJECT: github.com/danxiaonuo/uola.git
    # 分支
    BRANCH: master
    # 自定义执行脚本名称
