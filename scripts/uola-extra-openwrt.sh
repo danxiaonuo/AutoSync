@@ -42,3 +42,6 @@ cd package
 mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
 rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
 rm -rf xiaonuo/luci-theme-argon*
+cd ../
+# 增加 luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
