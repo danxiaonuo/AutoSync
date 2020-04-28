@@ -64,7 +64,7 @@ jobs:
     # 克隆源码
     - name: 克隆源码
       run: |
-        svn co https://github.com/danxiaonuo/AutoBuild-OpenWrt/branches/master/server/default-settings default-settings
+        svn co https://github.com/danxiaonuo/AutoBuild-OpenWrt/trunk/server/default-settings default-settings
         #git clone $REPO_URL -b $REPO_BRANCH packages
         #cd packages
         #rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS
