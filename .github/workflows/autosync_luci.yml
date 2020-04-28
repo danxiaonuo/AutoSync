@@ -66,7 +66,7 @@ jobs:
       run: |
         git clone $REPO_URL -b $REPO_BRANCH packages
         cd packages
-        rm -rf .svn && && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
+        rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
       
     # 上传到分支
     - name: 上传到分支
