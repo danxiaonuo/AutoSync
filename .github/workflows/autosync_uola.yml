@@ -81,5 +81,5 @@ jobs:
           git config user.name $GITHUB_USER_NAME
           git config user.email $GITHUB_USER_EMAIL
           git add .
-          git commit -a -m "Update packages"
+          git commit -a -m "Update uola"
           git push --force --quiet https://${{ secrets.RELEASE_TOKEN }}@$GITHUB_RROJECT HEAD:$BRANCH
