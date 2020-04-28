@@ -59,7 +59,7 @@ jobs:
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -yqq install git git-core subversion curl wget
+        sudo -E apt-get -y install git git-core subversion curl wget
         
     # 克隆源码
     - name: 克隆源码
