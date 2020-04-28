@@ -8,6 +8,8 @@ sed -i 's/192.168/10.8/g' package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/uola/g' package/base-files/files/bin/config_generate
 # 设置时区
 sed -i 's/UTC/CST-8/g' package/base-files/files/bin/config_generate
+# 修改root执行权限
+sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' package/base-files/files/etc/passwd
 # 增加IPV6
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoBuild-OpenWrt/master/server/etc/99-ipv6 > package/base-files/files/etc/hotplug.d/99-ipv6
 sed -i '/exit 0/i\mv /etc/hotplug.d/99-ipv6 /etc/hotplug.d/iface/99-ipv6' package/xiaonuo/default-settings/files/zzz-default-settings
