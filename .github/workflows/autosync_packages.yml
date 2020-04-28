@@ -55,13 +55,7 @@ jobs:
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell mysql* php* mssql-tools msodbcsql17
-        sudo -E apt-get update -y
-        sudo -E apt-get full-upgrade -y
         sudo -E apt-get install -y git git-core subversion curl wget
-        sudo -E apt-get autoremove -y --purge
-        sudo -E apt-get clean -y
-        sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
         
     # 克隆源码
     - name: 克隆源码
