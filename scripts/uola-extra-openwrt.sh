@@ -49,3 +49,6 @@ cd ../
 git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 # 增加 luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
+rm -rf package/xiaonuo/default-settings/.git*
+rm -rf package/xiaonuo/luci-theme-argon/.git*
+rm -rf .git*
