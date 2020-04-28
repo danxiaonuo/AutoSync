@@ -64,8 +64,8 @@ jobs:
     # 克隆源码
     - name: 克隆源码
       run: |
-        git clone $REPO_URL -b $REPO_BRANCH packages
-        cd packages
+        git clone $REPO_URL -b $REPO_BRANCH luci
+        cd luci
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
       
     # 上传到分支
@@ -73,7 +73,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: |
-          cd packages/
+          cd luci/
           git init
           git config user.name $GITHUB_USER_NAME
           git config user.email $GITHUB_USER_EMAIL
