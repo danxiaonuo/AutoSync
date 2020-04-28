@@ -34,3 +34,8 @@ sed -i '/exit 0/i\# 修改smartdns配置\nmv /etc/newsmartdns /etc/config/smartd
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoBuild-OpenWrt/master/server/etc/banner > package/base-files/files/etc/banner
 # 修改系统内核参数
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoBuild-OpenWrt/master/server/etc/sysctl.conf > package/base-files/files/etc/sysctl.conf
+
+# 应用软件设置
+cd package
+mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
+rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
