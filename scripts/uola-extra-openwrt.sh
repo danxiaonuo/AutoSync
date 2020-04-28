@@ -1,3 +1,18 @@
+# 应用软件设置
+cd package
+mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
+rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
+rm -rf xiaonuo/default-settings
+rm -rf xiaonuo/luci-theme-argon*
+cd ../
+# 增加 default-settings
+git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
+# 增加 luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
+rm -rf package/xiaonuo/default-settings/.git*
+rm -rf package/xiaonuo/luci-theme-argon/.git*
+rm -rf .git*
+# 修改版本号
 sed -i "s#DISTRIB_ID='.*'#DISTRIB_ID='uola'#g" package/base-files/files/etc/openwrt_release
 sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='R1.1.1'#g" package/base-files/files/etc/openwrt_release
 sed -i "s#DISTRIB_DESCRIPTION='.*'#DISTRIB_DESCRIPTION='uola'#g" package/base-files/files/etc/openwrt_release
@@ -38,17 +53,3 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/e
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/etc/sysctl.conf > package/base-files/files/etc/sysctl.conf
 # 修改源地址
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/feeds.conf.default > feeds.conf.default
-# 应用软件设置
-cd package
-mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
-rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
-rm -rf xiaonuo/default-settings
-rm -rf xiaonuo/luci-theme-argon*
-cd ../
-# 增加 default-settings
-git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
-# 增加 luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
-rm -rf package/xiaonuo/default-settings/.git*
-rm -rf package/xiaonuo/luci-theme-argon/.git*
-rm -rf .git*
