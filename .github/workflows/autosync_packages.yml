@@ -13,6 +13,10 @@ on:
 # 点击★开始触发更新
   watch:  
      types: [started]
+  
+# 每周三的晚上3点钟自动更新
+  schedule:
+     - cron: '0 3 * * 3'
      
 # 环境变量
 env:
@@ -55,7 +59,7 @@ jobs:
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get install -y git git-core subversion curl wget
+        sudo -E apt-get -yqq install git git-core subversion curl wget
         
     # 克隆源码
     - name: 克隆源码
