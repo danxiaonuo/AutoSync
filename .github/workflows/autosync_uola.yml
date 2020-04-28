@@ -1,0 +1,85 @@
+#=================================================
+# https://github.com/danxiaonuo/uola
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: danxiaonuo
+# Blog: https://www.danxiaonuo.com
+#=================================================
+
+name: 自动同步uola源码包
+
+# 设置触发条件
+on:
+# 点击★开始触发更新
+  watch:  
+     types: [started]
+  
+# 每周三的晚上3点钟自动更新
+  schedule:
+     - cron: '0 3 * * 3'
+     
+# 环境变量
+env:
+   # 源码仓库地址
+   REPO_URL: https://github.com/project-openwrt/routing
+   # 源码分支
+   REPO_BRANCH: master
+   # 时区设置
+   TZ: Asia/Shanghai
+   # 上传分支
+   UPLOAD_BRANCH: true
+   # Github 用户名
+   GITHUB_USER_NAME: danxiaonuo
+   # Github 邮箱
+   GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
+   # Github
+   GITHUB_RROJECT: github.com/danxiaonuo/default-settings.git
+   # 分支
+   BRANCH: master
+   
+   # 任务集
+jobs:
+  build:
+    # 选择虚拟环境
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    
+    # 运行步骤
+    steps:
+    
+    # 检出master分支
+    - name: 检出master分支
+      uses: actions/checkout@master
+      
+    # 初始化系统环境
+    - name: 初始化系统环境
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        docker rmi $(docker images -q)
+        sudo -E swapoff /swapfile
+        sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E apt-get -y install git git-core subversion curl wget
+        
+    # 克隆源码
+    - name: 克隆源码
+      run: |
+        svn co https://github.com/danxiaonuo/AutoBuild-OpenWrt/branches/master/server/default-settings default-settings
+        #git clone $REPO_URL -b $REPO_BRANCH packages
+        #cd packages
+        #rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS
+      
+    # 上传到分支
+    - name: 上传到分支
+      env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      run: |
+          #cd packages/
+          cd default-settings
+          git config core.ignorecase false
+          git init
+          git config user.name $GITHUB_USER_NAME
+          git config user.email $GITHUB_USER_EMAIL
+          git add .
+          git commit -a -m "Update packages"
+          git push --force --quiet https://${{ secrets.RELEASE_TOKEN }}@$GITHUB_RROJECT HEAD:$BRANCH
