@@ -1,17 +1,19 @@
-sed -i "s#DISTRIB_ID='.*'#DISTRIB_ID='danxiaonuo'#g" package/base-files/files/etc/openwrt_release
+sed -i "s#DISTRIB_ID='.*'#DISTRIB_ID='uola'#g" package/base-files/files/etc/openwrt_release
 sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='R1.1.1'#g" package/base-files/files/etc/openwrt_release
-sed -i "s#DISTRIB_DESCRIPTION='.*'#DISTRIB_DESCRIPTION='danxiaonuo'#g" package/base-files/files/etc/openwrt_release
+sed -i "s#DISTRIB_DESCRIPTION='.*'#DISTRIB_DESCRIPTION='uola'#g" package/base-files/files/etc/openwrt_release
 # 修改默认登陆IP地址
 sed -i 's/192.168.1.1/10.8.1.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168/10.8/g' package/base-files/files/bin/config_generate
 # 设置主机名称
-sed -i 's/OpenWrt/danxiaonuo/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/uola/g' package/base-files/files/bin/config_generate
 # 设置时区
 sed -i 's/UTC/CST-8/g' package/base-files/files/bin/config_generate
 # 增加IPV6
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoBuild-OpenWrt/master/server/etc/99-ipv6 > package/base-files/files/etc/hotplug.d/99-ipv6
 sed -i '/exit 0/i\mv /etc/hotplug.d/99-ipv6 /etc/hotplug.d/iface/99-ipv6' package/xiaonuo/default-settings/files/zzz-default-settings
 sed -i '/99-ipv6/a\chmod u+x /etc/hotplug.d/iface/99-ipv6' package/xiaonuo/default-settings/files/zzz-default-settings
+# 删除wifi禁用
+sed -i '/set wireless.radio${devidx}.disabled/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 2.5G
 sed -i '/channel="11"/a\\t\tssid="danxiaonuo-2HZ"' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 5.0G
