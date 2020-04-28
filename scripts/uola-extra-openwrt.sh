@@ -44,5 +44,7 @@ rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
 rm -rf xiaonuo/default-settings
 rm -rf xiaonuo/luci-theme-argon*
 cd ../
+# 增加 default-settings
+git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 # 增加 luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
