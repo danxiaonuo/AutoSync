@@ -1,12 +1,12 @@
 #=================================================
-# https://github.com/danxiaonuo/packages
+# https://github.com/danxiaonuo/luci
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
 # Author: danxiaonuo
 # Blog: https://www.danxiaonuo.com
 #=================================================
 
-name: 自动同步packages源码包
+name: 自动同步luci源码包
 
 # 设置触发条件
 on:
