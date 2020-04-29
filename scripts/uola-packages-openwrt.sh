@@ -11,4 +11,3 @@ git clone -b master https://github.com/danxiaonuo/default-settings xiaonuo/defau
 find xiaonuo/. -type d -regextype posix-extended -regex '.*.(svn|git)' -exec ls {} \; >& /dev/null
 git clone -b  master https://github.com/jerrykuku/luci-theme-argon.git xiaonuo/luci-theme-argon
 find xiaonuo/. -type d -regextype posix-extended -regex '.*.(svn|git)' -exec ls {} \; >& /dev/null
-find /. -type d -regextype posix-extended -regex '.*.(svn|git)' -exec ls {} \; >& /dev/null
