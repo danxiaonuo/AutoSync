@@ -38,6 +38,8 @@ env:
    BRANCH: master
    # 自定义执行脚本名称
    DIY_SH: scripts/uola-extra-openwrt.sh
+   # GITHUB项目路径
+   GITHUB_PATH: /home/runner/work/AutoSync/AutoSync/uola
    
    # 任务集
 jobs:
@@ -69,8 +71,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH uola
         cd uola
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
-        find /home/runner/work/AutoSync/AutoSync/uola/. -type d -iname '.svn' | xargs rm -rf
-        find /home/runner/work/AutoSync/AutoSync/uola/. -type d -iname '.git' | xargs rm -rf
+        find ${{ env.GITHUB_PATH }} -type d -regextype posix-extended -regex '.*.(svn|git)' -exec rm -rf {} \; >& /dev/null
       
     # 加载自定义脚本  
     - name: 加载自定义脚本
