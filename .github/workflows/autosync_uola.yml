@@ -73,7 +73,7 @@ jobs:
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
-        cp -rf ${{ env.GITHUB_PATH }}/server/uola/README.md .
+        ls -l ${{ env.GITHUB_PATH }}/
       
     # 加载自定义脚本  
     - name: 加载自定义脚本
