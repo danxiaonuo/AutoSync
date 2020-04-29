@@ -17,13 +17,15 @@ Welcome to Uola's  git source of OpenWrt and packages
 
 3、 使用 `git clone https://github.com/danxiaonuo/uola` 命令下载好源代码，然后 `cd uola` 进入目录
 
-4、更新源
+4、更新与安装源
 ```bash
    ./scripts/feeds update -a
    ./scripts/feeds install -a
-   make menuconfig
-   ```
+```
+5、生成配置文件
+```bash
+make menuconfig
+```
+6、 `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
-5、 `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
-
-6、 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
+7、 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
