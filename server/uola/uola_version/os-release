@@ -1,7 +1,7 @@
 NAME="Uola"
 VERSION="R1.1.1"
 ID="uola"
-ID_LIKE="uola openwrt"
+ID_LIKE="uola"
 PRETTY_NAME="Uola"
 VERSION_ID="uola"
 HOME_URL="https://www.danxiaonuo.com"
