@@ -41,10 +41,6 @@ sed -i 's/none/sae-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加默认WIFI密码
 sed -i '/set wireless.radio${devidx}.hwmode=11/a\\t\t\tset wireless.radio${devidx}.country=CN\n\t\t\tset wireless.radio${devidx}.mu_beamformer=1' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/set wireless.default_radio${devidx}.encryption=sae-mixed/a\\t\t\tset wireless.default_radio${devidx}.key=password\n\t\t\tset wireless.default_radio${devidx}.ieee80211w=1' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-# 修改smartdns配置
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns/newsmartdns > package/base-files/files/etc/newsmartdns
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns/smartdns.conf > package/base-files/files/etc/smartdns.conf
-sed -i '/exit 0/i\# 修改smartdns配置\nmv /etc/newsmartdns /etc/config/smartdns\nmv /etc/smartdns.conf /var/etc/smartdns/smartdns.conf' package/xiaonuo/default-settings/files/zzz-default-settings
 # 修改系统欢迎词
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/etc/banner > package/base-files/files/etc/banner
 # 修改系统内核参数
