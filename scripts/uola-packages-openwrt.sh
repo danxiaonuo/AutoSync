@@ -10,3 +10,6 @@ git clone https://github.com/jerrykuku/luci-theme-argon xiaonuo/luci-theme-argon
 find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 find . -type d -iname '.svn' | xargs rm -rf
 find . -type d -iname '.git' | xargs rm -rf
+# 修改smartdns配置文件
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > xiaonuo/smartdns/conf/smartdns.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > xiaonuo/smartdns/conf/custom.conf
