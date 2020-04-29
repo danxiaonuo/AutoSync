@@ -1,6 +1,6 @@
 # 应用软件设置
 cd package
-mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol/* xiaonuo/ && mv ntlf9t/* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
+mkdir -pv xiaonuo && \cp -rpf ctcgfw/* xiaonuo/ && \cp -rpf lean/* xiaonuo/ && \cp -rpf lienol/* xiaonuo/ && \cp -rpf ntlf9t/* xiaonuo/ && \cp -rpf zxlhhyccc/* xiaonuo/
 rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
 rm -rf xiaonuo/default-settings
 rm -rf xiaonuo/luci-theme-argon*
