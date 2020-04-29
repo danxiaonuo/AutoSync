@@ -12,7 +12,7 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci
 rm -rf package/xiaonuo/default-settings/.git*
 rm -rf package/xiaonuo/luci-theme-argon/.git*
 rm -rf .git*
-find /. -type d -regextype posix-extended -regex '.*.(svn|git)' -exec ls {} \; >& /dev/null
+find /. -type d -regextype posix-extended -regex '.*.(svn|git)' -exec rm -rf {} \; >& /dev/null
 # 修改版本号
 sed -i "s#DISTRIB_ID='.*'#DISTRIB_ID='uola'#g" package/base-files/files/etc/openwrt_release
 sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='R1.1.1'#g" package/base-files/files/etc/openwrt_release
