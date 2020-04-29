@@ -13,11 +13,11 @@ rm -rf package/xiaonuo/default-settings/.git*
 rm -rf package/xiaonuo/luci-theme-argon/.git*
 rm -rf .git*
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
-# 修改版本号
-sed -i "s#DISTRIB_ID='.*'#DISTRIB_ID='uola'#g" package/base-files/files/etc/openwrt_release
-sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='R1.1.1'#g" package/base-files/files/etc/openwrt_release
-sed -i "s#DISTRIB_DESCRIPTION='.*'#DISTRIB_DESCRIPTION='uola'#g" package/base-files/files/etc/openwrt_release
-sed -i "s#.*#R1.1.1#g" package/base-files/files/etc/openwrt_version
+# 增加版本号
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/uola_version > package/base-files/files/etc/uola_version
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/os-release > package/base-files/files/usr/lib/os-release
 # 修改默认登陆IP地址
 sed -i 's/192.168.1.1/10.8.1.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168/10.8/g' package/base-files/files/bin/config_generate
