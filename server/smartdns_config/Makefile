@@ -9,7 +9,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/smartdns_config
   TITLE:= smartdns_config script.
   MAINTAINER:=Uola Project OpenWrt
-  DEPENDS:=+smartdns +luci-app-smartdns
+  DEPENDS:=+smartdns
 endef
 
 define Package/smartdns_config/description
