@@ -1,6 +1,7 @@
 # 应用软件设置
 cd package
-mkdir -pv xiaonuo && mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
+mkdir -pv xiaonuo 
+mv ctcgfw/* xiaonuo/ && mv lean/* xiaonuo/ && mv lienol* xiaonuo/ && mv ntlf9t* xiaonuo/ && mv zxlhhyccc/* xiaonuo/
 rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
 rm -rf xiaonuo/default-settings
 rm -rf xiaonuo/luci-theme-argon*
@@ -25,10 +26,8 @@ sed -i 's/OpenWrt/uola/g' package/base-files/files/bin/config_generate
 sed -i 's/UTC/CST-8/g' package/base-files/files/bin/config_generate
 # 修改root执行权限
 sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' package/base-files/files/etc/passwd
-# 增加IPV6
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/etc/99-ipv6 > package/base-files/files/etc/hotplug.d/99-ipv6
-sed -i '/exit 0/i\mv /etc/hotplug.d/99-ipv6 /etc/hotplug.d/iface/99-ipv6' package/xiaonuo/default-settings/files/zzz-default-settings
-sed -i '/99-ipv6/a\chmod u+x /etc/hotplug.d/iface/99-ipv6' package/xiaonuo/default-settings/files/zzz-default-settings
+# 增加net6
+sed -i 's/odhcp6c/& net6/' include/target.mk
 # 删除wifi禁用
 sed -i '/set wireless.radio${devidx}.disabled/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 2.5G
