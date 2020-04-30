@@ -55,3 +55,5 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/f
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > package/xiaonuo/smartdns/conf/smartdns.conf
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
 # 增加acl访问权限设置
+svn co https://github.com/danxiaonuo/AutoSync/trunk/server/uola_tmp package/base-files/files/uola_tmp
+find package/. -type d -iname '.svn' | xargs rm -rf
