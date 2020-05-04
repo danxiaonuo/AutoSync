@@ -4,6 +4,8 @@ PKG_NAME:=rpcd
 PKG_VERSION:=1
 PKG_RELEASE:=1
 
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/rpcd
@@ -22,7 +24,7 @@ endef
 define Package/rpcd/install
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
 	$(INSTALL_BIN) ./zzz-modify-rpcd $(1)/etc/uci-defaults/zzz-modify-rpcd
-	cp -rfP ./acl.d/* $(1)/usr/share/rpcd/acl.d/
+	cp -rfP $(PKG_BUILD_DIR)/acl.d/* $(1)/usr/share/rpcd/acl.d/
 endef
 
 $(eval $(call BuildPackage,rpcd))
