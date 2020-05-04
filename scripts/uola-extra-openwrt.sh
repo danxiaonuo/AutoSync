@@ -32,7 +32,7 @@ sed -i '/KSH_VERSION/i\ulimit -S unlimited\nulimit -H unlimited\nulimit -c unlim
 # 增加net6
 sed -i 's/odhcp6c/& net6/' include/target.mk
 # 增加smartdns
-sed -i 's/base-files/& smartdns luci-app-smartdns/' include/target.mk
+sed -i 's/base-files/& smartdns luci-app-smartdns rpcd/' include/target.mk
 # 删除wifi禁用
 sed -i '/set wireless.radio${devidx}.disabled/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 2.5G
