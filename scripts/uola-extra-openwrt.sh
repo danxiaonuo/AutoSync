@@ -60,5 +60,5 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/s
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/rpcd/acl.d/luci-app-smartdns.json > package/xiaonuo/luci-app-smartdns/root/usr/share/rpcd/acl.d/luci-app-smartdns.json
 # 增加acl访问权限设置
-svn co https://github.com/danxiaonuo/AutoSync/tree/master/server/rpcd package/xiaonuo/rpcd
+svn co https://github.com/danxiaonuo/AutoSync/trunk/server/rpcd package/xiaonuo/rpcd
 find package/. -type d -iname '.svn' | xargs rm -rf
