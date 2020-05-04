@@ -29,7 +29,7 @@ endef
 
 define Package/rpcd/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	mv -f $(PKG_BUILD_DIR)/acl.d/* $(1)/usr/share/rpcd/acl.d
+	cp -pR $(PKG_BUILD_DIR)/acl.d/* $(1)/usr/share/rpcd/acl.d/
 endef
 
 $(eval $(call BuildPackage,rpcd))
