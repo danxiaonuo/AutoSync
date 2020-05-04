@@ -1,3 +1,4 @@
 #!/bin/sh
 
 rm -rf /share/rpcd/acl.d/*
+rm -rf /usr/share/rpcd/acl.d/unauthenticated.json
