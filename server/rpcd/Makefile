@@ -10,7 +10,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/rpcd
   TITLE:= rpcd script.
   MAINTAINER:=Uola Project OpenWrt
-  DEPENDS:=+rpcd +rpcd-mod-file +rpcd-mod-iwinfo +luci-app-smartdns +luci-app-webadmin +luci-app-frpc +luci-app-serverchan 
+  DEPENDS:=+rpcd +luci-app-smartdns +luci-app-webadmin +luci-app-frpc +luci-app-serverchan 
 endef
 
 define Package/rpcd/description
