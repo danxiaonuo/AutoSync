@@ -1,0 +1,25 @@
+{
+	"unauthenticated": {
+		"description": "Access controls for unauthenticated requests",
+		"read": {
+			"file": {
+				"*": [ "*" ]
+			},
+			"ubus": {
+				"service": [ "*" ],
+				"session": ["*"]
+			},
+			"uci": [ "*" ]
+		},
+		"write": {
+			"file": {
+				"*": [ "*" ]
+			},
+			"ubus": {
+				"service": [ "*" ],
+				"session": ["*"]
+			},
+			"uci": [ "*" ]
+		}
+	}
+}
