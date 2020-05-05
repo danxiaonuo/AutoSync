@@ -3,7 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=acl
 PKG_VERSION:=1
 PKG_RELEASE:=1
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -28,7 +28,7 @@ endef
 
 define Package/acl/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	cp -rf $(PKG_BUILD_DIR)/files/* $(1)/usr/share/rpcd/acl.d/
+	cp -fpR ./files/* $(1)/usr/share/rpcd/acl.d/
 endef
 
 $(eval $(call BuildPackage,acl))
