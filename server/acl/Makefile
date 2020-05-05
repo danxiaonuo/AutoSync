@@ -21,7 +21,7 @@ endef
 
 define Package/acl/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	$(CP) ./files/* $(1)/usr/share/rpcd/acl.d/
+	$(CP) ./files/*.json $(1)/usr/share/rpcd/acl.d
 endef
 
 $(eval $(call BuildPackage,acl))
