@@ -20,11 +20,6 @@ endef
 define Build/Compile
 endef
 
-define Package/$(PKG_NAME)/postinst
-#!/bin/sh
-rm -rf /share/acl/acl.d/*
-exit 0
-endef
 
 define Package/acl/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
