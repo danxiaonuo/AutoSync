@@ -68,7 +68,7 @@ jobs:
     # 克隆源码
     - name: 克隆源码
       run: |
-        git clone $REPO_URL -b $REPO_BRANCH packages
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH packages
         cd packages
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
