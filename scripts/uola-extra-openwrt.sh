@@ -32,7 +32,7 @@ sed -i '/KSH_VERSION/i\ulimit -S unlimited\nulimit -H unlimited\nulimit -c unlim
 # 增加net6
 sed -i 's/odhcp6c/& net6/' include/target.mk
 # 增加smartdns
-sed -i 's/base-files/& smartdns luci-app-smartdns acl/' include/target.mk
+sed -i 's/base-files/& smartdns luci-app-smartdns acld/' include/target.mk
 # 删除wifi禁用
 sed -i '/set wireless.radio${devidx}.disabled/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 2.5G
@@ -58,4 +58,4 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/a
 # 修改smartdns配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > package/xiaonuo/smartdns/conf/smartdns.conf
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/acl/files/luci-app-smartdns.json > package/xiaonuo/luci-app-smartdns/root/usr/share/rpcd/acl.d/luci-app-smartdns.json
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/acld/files/luci-app-smartdns.json > package/xiaonuo/luci-app-smartdns/root/usr/share/rpcd/acl.d/luci-app-smartdns.json
