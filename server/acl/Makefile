@@ -3,6 +3,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=acl
 PKG_VERSION:=1
 PKG_RELEASE:=1
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -19,9 +20,16 @@ endef
 define Build/Compile
 endef
 
+define Package/$(PKG_NAME)/postinst
+#!/bin/sh
+rm -rf /share/rpcd/acl.d/*
+rm -rf /usr/share/rpcd/acl.d/unauthenticated.json
+exit 0
+endef
+
 define Package/acl/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	$(CP) ./files/*.json $(1)/usr/share/rpcd/acl.d
+	$(CP) $(PKG_BUILD_DIR)/files/*.json $(1)/usr/share/rpcd/acl.d
 endef
 
 $(eval $(call BuildPackage,acl))
