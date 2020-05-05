@@ -27,8 +27,8 @@ exit 0
 endef
 
 define Package/acl/install
-	$(INSTALL_DIR) $(1)/usr/share/acl/acl.d
-	$(CP) -rf $(PKG_BUILD_DIR)/files/* $(1)/usr/share/acl/acl.d/
+	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
+	cp -rf $(PKG_BUILD_DIR)/files/* $(1)/usr/share/rpcd/acl.d
 endef
 
 $(eval $(call BuildPackage,acl))
