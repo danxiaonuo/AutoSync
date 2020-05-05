@@ -23,7 +23,6 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 rm -rf /share/acl/acl.d/*
-rm -rf /usr/share/rpcd/acl.d/unauthenticated.json
 exit 0
 endef
 
