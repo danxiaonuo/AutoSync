@@ -29,7 +29,7 @@ endef
 
 define Package/acl/install
 	$(INSTALL_DIR) $(1)/usr/share/acl/acl.d
-	cp -pR $(PKG_BUILD_DIR)/acl.d/* $(1)/usr/share/acl/acl.d/
+	cp -pR $(PKG_BUILD_DIR)/files/* $(1)/usr/share/acl/acl.d/
 endef
 
 $(eval $(call BuildPackage,acl))
