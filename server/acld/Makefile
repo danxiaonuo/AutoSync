@@ -3,7 +3,6 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=acld
 PKG_VERSION:=1
 PKG_RELEASE:=1
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -29,7 +28,7 @@ endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	$(CP) $(PKG_BUILD_DIR)/files/*.json $(1)/usr/share/rpcd/acl.d
+	$(CP) ./files/*.json $(1)/usr/share/rpcd/acl.d
 endef
 
 $(eval $(call BuildPackage,acld))
