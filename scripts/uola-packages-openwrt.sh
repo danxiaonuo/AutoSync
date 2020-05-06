@@ -10,6 +10,8 @@ git clone https://github.com/jerrykuku/luci-theme-argon xiaonuo/luci-theme-argon
 find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 find . -type d -iname '.svn' | xargs rm -rf
 find . -type d -iname '.git' | xargs rm -rf
+svn co https://github.com/danxiaonuo/AutoSync/trunk/server/clean xiaonuo/clean
+find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld xiaonuo/acld
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 修改automount配置文件
