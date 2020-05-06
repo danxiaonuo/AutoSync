@@ -1,0 +1,6 @@
+#!/bin/sh
+
+rm -rf /share/rpcd/acl.d/*
+rm -rf /usr/share/rpcd/acl.d/luci-app-frpc.json
+rm -rf /usr/share/rpcd/acl.d/luci-app-smartdns.json
+rm -rf /usr/share/rpcd/acl.d/unauthenticated.json 
