@@ -21,12 +21,8 @@ endef
 
 
 define Package/$(PKG_NAME)/install
-       $(INSTALL_DIR) $(1)/share/rpcd/acl.d
-       rm -rf $(1)/share/rpcd/acl.d/*
-       $(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-       rm -rf $(1)/usr/share/rpcd/acl.d/luci-app-frpc.json
-       rm -rf $(1)/usr/share/rpcd/acl.d/luci-app-smartdns.json
-       rm -rf $(1)/usr/share/rpcd/acl.d/unauthenticated.json 
+       $(INSTALL_DIR) $(1)/etc/uci-defaults
+       $(INSTALL_BIN) ./zzz-files-clean $(1)/etc/uci-defaults/zzz-files-clean
 endef
 
 $(eval $(call BuildPackage,clean))
