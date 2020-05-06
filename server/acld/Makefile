@@ -22,13 +22,12 @@ endef
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 rm -rf /share/rpcd/acl.d/*
-rm -rf /usr/share/rpcd/acl.d/unauthenticated.json
 exit 0
 endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	mv -f ./files/*.json $(1)/usr/share/rpcd/acl.d
+	mv -f ./files/*.json $(1)/usr/share/rpcd/acl.d 2>/dev/null
 endef
 
 $(eval $(call BuildPackage,acld))
