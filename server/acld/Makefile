@@ -19,7 +19,6 @@ endef
 define Build/Compile
 endef
 
-
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
 	$(CP) ./files/*.json $(1)/usr/share/rpcd/acl.d
