@@ -26,7 +26,6 @@ define Package/$(PKG_NAME)/install
        rm -rf $(1)/usr/share/rpcd/acl.d/luci-app-frpc.json
        rm -rf $(1)/usr/share/rpcd/acl.d/luci-app-smartdns.json
        rm -rf $(1)/usr/share/rpcd/acl.d/unauthenticated.json
-       
 endef
 
 $(eval $(call BuildPackage,clean))
