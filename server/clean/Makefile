@@ -22,7 +22,7 @@ endef
 
 define Package/$(PKG_NAME)/install
        $(INSTALL_DIR) $(1)/etc/uci-defaults
-	     $(INSTALL_BIN) ./zzz-files-clean $(1)/etc/uci-defaults/zzz-files-clean
+       $(INSTALL_BIN) ./zzz-files-clean $(1)/etc/uci-defaults/zzz-files-clean
 endef
 
 $(eval $(call BuildPackage,clean))
