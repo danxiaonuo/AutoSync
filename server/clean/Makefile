@@ -9,7 +9,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)
   TITLE:= clean script.
   MAINTAINER:=Uola Project OpenWrt
-  DEPENDS:=+luci-app-smartdns +luci-app-webadmin +luci-app-frpc +luci-app-serverchan 
+  DEPENDS:=+default-settings +luci-app-smartdns +luci-app-webadmin +luci-app-frpc +luci-app-serverchan 
 endef
 
 define Package/$(PKG_NAME)/description
