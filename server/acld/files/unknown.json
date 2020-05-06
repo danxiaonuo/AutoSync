@@ -1,6 +1,6 @@
 {
-	"unauthenticated": {
-		"description": "Access controls for unauthenticated requests",
+	"*": {
+		"description": "Access controls for unknown requests",
 		"read": {
 			"file": {
 				"*": [ "*" ]
