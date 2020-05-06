@@ -9,7 +9,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)
   TITLE:= acld script.
   MAINTAINER:=Uola Project OpenWrt
-  DEPENDS:=+clean
+  DEPENDS:=+cleanfile
 endef
 
 define Package/$(PKG_NAME)/description
