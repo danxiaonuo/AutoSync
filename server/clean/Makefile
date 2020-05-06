@@ -16,6 +16,9 @@ define Package/$(PKG_NAME)/description
 clean script.
 endef
 
+define Build/Compile
+endef
+
 define Package/$(PKG_NAME)/install
        $(INSTALL_DIR) $(1)/etc/uci-defaults
        $(INSTALL_BIN) ./zzz-files-clean $(1)/etc/uci-defaults/zzz-files-clean
