@@ -10,7 +10,7 @@ git clone https://github.com/jerrykuku/luci-theme-argon xiaonuo/luci-theme-argon
 find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 find . -type d -iname '.svn' | xargs rm -rf
 find . -type d -iname '.git' | xargs rm -rf
-svn co https://github.com/danxiaonuo/AutoSync/trunk/server/clean xiaonuo/clean
+svn co https://github.com/danxiaonuo/AutoSync/trunk/server/cleanfile xiaonuo/cleanfile
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld xiaonuo/acld
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
