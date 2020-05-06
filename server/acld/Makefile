@@ -19,11 +19,6 @@ endef
 define Build/Compile
 endef
 
-define Package/$(PKG_NAME)/postinst
-#!/bin/sh
-rm -rf /share/rpcd/acl.d/*
-exit 0
-endef
 
 define Package/$(PKG_NAME)/install
         $(INSTALL_DIR) $(1)/etc/uci-defaults
