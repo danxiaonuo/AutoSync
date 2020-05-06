@@ -27,7 +27,7 @@ endef
 
 define Package/$(PKG_NAME)/install
         $(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/zzz-modify-acl $(1)/etc/uci-defaults/zzz-modify-acl
+	$(INSTALL_BIN) ./zzz-modify-acl $(1)/etc/uci-defaults/zzz-modify-acl
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
 	mv -f ./files/*.json $(1)/usr/share/rpcd/acl.d 2>/dev/null
 endef
