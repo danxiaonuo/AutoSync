@@ -77,10 +77,10 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: |
-          cd packages/
+          cd clash/
           git init
           git config user.name $GITHUB_USER_NAME
           git config user.email $GITHUB_USER_EMAIL
           git add .
-          git commit -a -m "Update packages"
+          git commit -a -m "Update Clash"
           git push --force --quiet https://${{ secrets.RELEASE_TOKEN }}@$GITHUB_RROJECT HEAD:$BRANCH
