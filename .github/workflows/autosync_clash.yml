@@ -16,7 +16,7 @@ on:
   
 # 每天的晚上3点钟自动更新
   schedule:
-     - cron: '0 3 * * *'
+     - cron: '0 */3 * * *'
      
 # 环境变量
 env:
@@ -67,7 +67,7 @@ jobs:
     - name: 克隆源码
       run: |
         git clone $REPO_URL -b $REPO_BRANCH clash
-        cd packages
+        cd clash
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
