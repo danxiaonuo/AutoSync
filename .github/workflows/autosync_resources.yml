@@ -1,12 +1,12 @@
 #=================================================
-# https://github.com/danxiaonuo/clash
-# Description: Automatic synchronization Clash
+# https://github.com/danxiaonuo/resources
+# Description: Automatic synchronization resources
 # Lisence: MIT
 # Author: danxiaonuo
 # Blog: https://www.danxiaonuo.com
 #=================================================
 
-name: 自动同步Clash源码包
+name: 自动同步resources
 
 # 设置触发条件
 on:
@@ -33,11 +33,11 @@ env:
    # Github 邮箱
    GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
    # Github
-   GITHUB_RROJECT: github.com/danxiaonuo/clash.git
+   GITHUB_RROJECT: github.com/danxiaonuo/resources.git
    # 分支
    BRANCH: master
    # GITHUB项目路径
-   GITHUB_PATH: /home/runner/work/AutoSync/AutoSync/clash
+   GITHUB_PATH: /home/runner/work/AutoSync/AutoSync/resources
    
    # 任务集
 jobs:
@@ -66,8 +66,8 @@ jobs:
     # 克隆源码
     - name: 克隆源码
       run: |
-        git clone $REPO_URL -b $REPO_BRANCH clash
-        cd clash
+        git clone $REPO_URL -b $REPO_BRANCH resources
+        cd resources
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
@@ -77,10 +77,10 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: |
-          cd clash/
+          cd resources/
           git init
           git config user.name $GITHUB_USER_NAME
           git config user.email $GITHUB_USER_EMAIL
           git add .
-          git commit -a -m "Update Clash"
+          git commit -a -m "Update resources"
           git push --force --quiet https://${{ secrets.RELEASE_TOKEN }}@$GITHUB_RROJECT HEAD:$BRANCH
