@@ -12,7 +12,7 @@
 
 #属性
 url = 'https://raw.githubusercontent.com/danxiaonuo/resources/master/v2ray'
-user_path = '/root'
+user_path = './'
 net_config = 'https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/Clash/config.yaml'
 
 
@@ -23,7 +23,7 @@ import json
 import datetime
 import yaml
 import sys
-clash_path = '/home/runner/work/AutoSync/AutoSync/resources/clash/config.yaml'
+clash_path = 'Clashx.yaml'
 def log(msg):
     time = datetime.datetime.now()
     print('['+time.strftime('%Y.%m.%d-%H:%M:%S')+']:'+msg)
