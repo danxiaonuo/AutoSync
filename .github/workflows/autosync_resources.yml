@@ -61,7 +61,7 @@ jobs:
         docker rmi $(docker images -q)
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -y install git git-core subversion curl wget
+        sudo -E apt-get -y install git git-core subversion curl wget python3.8
         
     # 克隆源码
     - name: 克隆源码
@@ -70,7 +70,7 @@ jobs:
         cd resources
         sed -i '/#!MANAGED-CONFIG/d' *
         curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/Clash/v2ray.py > v2ray.py
-        chomd 775 v2ray.py && python3.8 v2ray.py
+        chmod 775 v2ray.py && python3.8 v2ray.py
         rm -rf .svn && rm -rf *.md && rm -rf *.py && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
