@@ -69,6 +69,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH resources
         cd resources
         sed -i '/#!MANAGED-CONFIG/d' *
+        curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/Clash/Clashx.yaml > Clashx.yaml
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
