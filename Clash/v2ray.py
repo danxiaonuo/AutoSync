@@ -23,7 +23,7 @@ import json
 import datetime
 import yaml
 import sys
-clash_path = 'config.yaml'
+clash_path = 'Clashx.yaml'
 def log(msg):
     time = datetime.datetime.now()
     print('['+time.strftime('%Y.%m.%d-%H:%M:%S')+']:'+msg)
