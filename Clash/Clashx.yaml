@@ -3,37 +3,10 @@ socks-port: 7891
 redir-port: 7892
 allow-lan: true
 mode: Rule
-log-level: info
+log-level: silent
 external-controller: 127.0.0.1:9090
 experimental:
-  ignore-resolve-fail: true
-cfw-profile-mixin:
-  dns:
-    enable: true
-    listen: :53
-    nameserver:
-      - tls://118.89.110.78:853
-      - tls://47.96.179.163:853
-      - tls://1.0.0.1:853
-dns:
- enable: true
- ipv6: true
- nameserver:
-  - tls://118.89.110.78:853
-  - tls://47.96.179.163:853
- fallback:
-  - tls://118.89.110.78:853
-  - tls://47.96.179.163:853
-  - tls://1.0.0.1:853
- fallback-filter:
-    geoip: true
-    ipcidr:
-      - 240.0.0.0/4
- fake-ip-filter:
-    - '*.lan'
- tun:
-   enable: true
-   stack: system
+  ignore-resolve-fail: true 
 cfw-bypass:
   - qq.com
   - music.163.com
@@ -69,869 +42,299 @@ cfw-child-process: []
 cfw-proxies-order: default
 
 Proxy:
-  - {name: 🇨🇳 CN-TW-台湾-35-cht.com.tw, server: tw2.oyvpnserver.com, port: 3572, type: ss, cipher: rc4-md5, password: cht1997...///}
-  - {name: 🇨🇳 CN-TW-台湾-233-cht.com.tw, server: 211.75.79.233, port: 16505, type: ss, cipher: aes-256-cfb, password: QozzuzLs2W32}
-  - {name: 🇯🇵 JP-日本-东京-150-2-thinkhuge.net, server: sgp2.oyvpnserver.com, port: 3572, type: ss, cipher: rc4-md5, password: cht1997...///}
-  - {name: 🇯🇵 JP-日本-东京-150-3-thinkhuge.net, server: jp3.oyvpnserver.com, port: 3572, type: ss, cipher: rc4-md5, password: cht1997...///}
-  - {name: 🇯🇵 JP-日本-东京-250-thinkhuge.net, server: 45.67.53.250, port: 443, type: ss, cipher: aes-256-cfb, password: www.xbvpn.com}
-  - {name: 🇺🇲 USA-美国-费利蒙-9-linode.com, server: 45.79.66.9, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-费利蒙-12-linode.com, server: 45.79.108.12, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-费利蒙-37-linode.com, server: 45.79.79.37, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-费利蒙-40-443-linode.com, server: 45.56.94.40, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-费利蒙-134-443-linode.com, server: 50.116.2.131, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-费利蒙-178-linode.com, server: 45.79.93.178, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com, server: usa1.oyvpnserver.com, port: 3572, type: ss, cipher: rc4-md5, password: cht1997...///}
-  - {name: 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com, server: usa2.oyvpnserver.com, port: 3572, type: ss, cipher: rc4-md5, password: cht1997...///}
-  - {name: 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com, server: usa5.oyvpnserver.com, port: 3572, type: ss, cipher: rc4-md5, password: cht1997...///}
-  - {name: 🇺🇲 USA-美国-纽瓦克-3-linode.com, server: 45.33.88.190, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇺🇲 USA-美国-纽瓦克-4-linode.com, server: 45.33.93.207, port: 443, type: ss, cipher: aes-256-cfb, password: 9d6cceaa373bf2c8acb22e60b6a58be6}
-  - {name: 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net, server: 45.58.148.66, port: 21763, type: ss, cipher: aes-256-cfb, password: 4XVeP1}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl, server: ss-01.ssrsub.xyz, port: 8081, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl, server: ss-02.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl, server: ss-03.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl, server: ss-04.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl, server: ss-05.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl, server: ss-06.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl, server: ss-07.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl, server: ss-08.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl, server: ss-09.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl, server: ss-10.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl, server: ss-11.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl, server: ss-12.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl, server: ss-13.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl, server: ss-14.ssrsub.xyz, port: 8081, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl, server: ss-15.ssrsub.xyz, port: 8080, type: ss, cipher: xchacha20-ietf-poly1305, password: t.me/SSRSUB, plugin: obfs, plugin-opts: {mode: http, host: data.video.qiyi.com}}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl, server: ss-16.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl, server: ss-17.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl, server: ss-18.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl, server: ss-19.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl, server: ss-20.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl, server: ss-21.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl, server: ss-22.ssrsub.xyz, port: 153, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl, server: ss-23.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl, server: ss-24.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl, server: ss-25.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl, server: ss-26.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl, server: ss-27.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl, server: ss-28.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl, server: ss-29.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl, server: ss-30.ssrsub.xyz, port: 152, type: ss, cipher: xchacha20-ietf-poly1305, password: t.cn/EGJIyrl}
-  - {name: 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl, server: v2-01.ssrsub.xyz, port: 443, type: vmess, uuid: 43414098-1ef8-47bb-a55e-3fb50adc58eb, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /5ac2e195/, ws-headers: {Host: v2-01.ssrsub.xyz}}
-  - {name: 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl, server: v2-02.ssrsub.xyz, port: 443, type: vmess, uuid: 20be3176-6308-4ed8-9ad1-5b4b9ed7456e, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /3131ff34/, ws-headers: {Host: v2-02.ssrsub.xyz}}
-  - {name: 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl, server: v2-03.ssrsub.xyz, port: 443, type: vmess, uuid: cfa94f38-d325-4c7e-93ed-6f9e73ae27c2, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /94d6a2cc/, ws-headers: {Host: v2-03.ssrsub.xyz}}
-  - {name: 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl, server: v2-04.ssrsub.xyz, port: 443, type: vmess, uuid: fda9dc7d-0f06-4455-a5dc-40f3c0c5cf1b, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /01b6eaef/, ws-headers: {Host: v2-04.ssrsub.xyz}}
-  - {name: 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl, server: v2-05.ssrsub.xyz, port: 443, type: vmess, uuid: bdb68a2e-8d3c-4d56-b5e7-069010deba79, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /7dad9892/, ws-headers: {Host: v2-05.ssrsub.xyz}}
-  - {name: 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl, server: v2-06.ssrsub.xyz, port: 443, type: vmess, uuid: 4d7ec389-0867-474b-bc32-296652f6615c, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /9650bafd/, ws-headers: {Host: v2-06.ssrsub.xyz}}
-  - {name: 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl, server: v2-07.ssrsub.xyz, port: 443, type: vmess, uuid: 39665c5b-8215-4c14-a2e2-1232f40fb4e8, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /e9795400/, ws-headers: {Host: v2-07.ssrsub.xyz}}
-  - {name: 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl, server: v2-08.ssrsub.xyz, port: 443, type: vmess, uuid: 08142992-c976-400e-b899-f09771d6aa3c, alterId: 233, cipher: auto, tls: true, network: ws, ws-path: /, ws-headers: {Host: v2-08.ssrsub.xyz}}
-  - {name: 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl, server: v2-09.ssrsub.xyz, port: 443, type: vmess, uuid: ef7a67f8-c8cb-471f-be8b-943694ebc6b6, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /52b434fa/, ws-headers: {Host: v2-09.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl, server: v2-10.ssrsub.xyz, port: 443, type: vmess, uuid: 6a399838-ade8-46d7-8ac1-df550d859971, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /be50f6ea/, ws-headers: {Host: v2-10.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl, server: v2-11.ssrsub.xyz, port: 443, type: vmess, uuid: f544c007-d3fc-4604-8a0d-a0df7f313ef8, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /1635fb02/, ws-headers: {Host: v2-11.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl, server: v2-12.ssrsub.xyz, port: 443, type: vmess, uuid: 1c0f2451-9b69-4643-be23-331475c9b286, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /383c6452/, ws-headers: {Host: v2-12.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl, server: v2-13.ssrsub.xyz, port: 443, type: vmess, uuid: dd39f7f4-8446-4bb6-859f-70810899ea90, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /b71aa52c/, ws-headers: {Host: v2-13.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl, server: v2-14.ssrsub.xyz, port: 443, type: vmess, uuid: 581106bc-7e1d-4201-8c66-486bb1982fa3, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /1ded0b5a/, ws-headers: {Host: v2-14.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl, server: v2-15.ssrsub.xyz, port: 443, type: vmess, uuid: ff53bbfc-c43d-4c7a-8adf-5f28621465a6, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /6ec97849/, ws-headers: {Host: v2-15.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl, server: v2-16.ssrsub.xyz, port: 443, type: vmess, uuid: 2c173a9b-dae7-4b9b-8a3f-ccf4f941fe8f, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /d186991b/, ws-headers: {Host: v2-16.ssrsub.xyz}}
-  - {name: 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl, server: v2-17.ssrsub.xyz, port: 443, type: vmess, uuid: 14fd171d-6d47-457c-9b83-6dd644a6feef, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /0ce4eb50/, ws-headers: {Host: v2-17.ssrsub.xyz}}
-  - {name: 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl, server: v2-18.ssrsub.xyz, port: 443, type: vmess, uuid: 78e756d1-02f8-475d-b9c9-67fef22fea0b, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /b2c44fad/, ws-headers: {Host: v2-18.ssrsub.xyz}}
-  - {name: 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl, server: v2-19.ssrsub.xyz, port: 443, type: vmess, uuid: a5eab831-13db-4244-b273-fbaacdd9ac58, alterId: 2, cipher: auto, tls: true, network: ws, ws-path: /168a759c/, ws-headers: {Host: v2-19.ssrsub.xyz}}
-  - {name: 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl, server: tanzhen.pw, port: 3443, type: vmess, uuid: 4daf0f2a-2a18-48b0-eb9a-8387ef7d07d8, alterId: 100, cipher: auto, tls: true, network: ws, ws-path: /404, ws-headers: {Host: tanzhen.pw}}
-  
-
+proxy-provider:
+    TW:
+      type: http
+      path: provider-tw.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fssrsub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(TW%7c%e5%8f%b0%e6%b9%be%7c%e5%8f%b0%e7%81%a3)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    HK:
+      type: http
+      path: provider-hk.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fssrsub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(HK%7c%e9%a6%99%e6%b8%af)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    JP:
+      type: http
+      path: provider-jp.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(JP%7c%e6%97%a5%e6%9c%ac)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    SG:
+      type: http
+      path: provider-sg.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(SG%7c%e6%96%b0%e5%8a%a0%e5%9d%a1)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    KR:
+      type: http
+      path: provider-kr.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(KR%7c%e9%9f%a9%e5%9b%bd)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    RU:
+      type: http
+      path: provider-ru.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(RU%7c%e4%bf%84%e7%bd%97%e6%96%af)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    CA:
+      type: http
+      path: provider-ca.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(CA%7c%e5%8a%a0%e6%8b%bf%e5%a4%a7)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    US:
+      type: http
+      path: provider-us.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(US%7c%e7%be%8e%e5%9b%bd)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    GB:
+      type: http
+      path: provider-gb.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(GB%7c%e8%8b%b1%e5%9b%bd)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    YouTube:
+      type: http
+      path: provider-youtube.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(YouTube%7c%e6%b2%b9%e7%ae%a1)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    NETFLIX:
+      type: http
+      path: provider-netflix.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(NETFLIX%7cNetflix)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
 Proxy Group:
-  - name: 🌏 负载均衡
+  - name: "\U0001F1F9\U0001F1FC 中国台湾省"
+    type: select
+    use:
+    - TW
+  - name: "\U0001F1ED\U0001F1F0 中国香港"
+    type: select
+    use:
+    - HK   
+  - name: "\U0001F1EF\U0001F1F5 日本"
+    type: select
+    use:
+    - JP  
+  - name: "\U0001F1F8\U0001F1EC 新加坡"
+    type: select
+    use:
+    - SG
+  - name: "\U0001F1F0\U0001F1F7 韩国"
+    type: select
+    use:
+    - KR
+  - name: "\U0001F1F7\U0001F1FA 俄罗斯"
+    type: select
+    use:
+    - RU
+  - name: "\U0001F1E8\U0001F1E6 加拿大"
+    type: select
+    use:
+    - CA
+  - name: "\U0001F1FA\U0001F1F8 美国"
+    type: select
+    use:
+    - US
+  - name: "\U0001F1EC\U0001F1E7 英国"
+    type: select
+    use:
+    - GB
+  - name: "\U0001F9EA YouTube"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    use:
+    - YouTube
+  - name: "\U0001F578 NETFLIX"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    use:
+    - NETFLIX
+
+
+  - name: 🌕 负载均衡
     type: load-balance
     url: 'http://www.gstatic.com/generate_204'
-    interval: 600
+    interval: 30
     proxies:
-      - ♻️ 自动选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: ✈️ 最佳节点
     type: url-test
     url: http://www.gstatic.com/generate_204
-    interval: 600
+    interval: 30
     proxies:
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: 🔰 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - ✈️ 最佳节点
-      - 🌏 负载均衡
+      - 🌕 负载均衡
       - 🎯 全球直连
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: ♻️ 自动选择
     type: fallback
     url: http://www.gstatic.com/generate_204
-    interval: 600
+    interval: 30
     proxies:
       - ✈️ 最佳节点
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: 🌏 国内媒体
     type: select
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🔰 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🔰 节点选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: 📹 YouTube
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     proxies:
+      - "\U0001F9EA YouTube"
       - 🔰 节点选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
   - name: 🎥 NETFLIX
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     proxies:
+      - "\U0001F578 NETFLIX"
       - 🔰 节点选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
   - name: 📺 巴哈姆特
     type: select
     proxies:
       - 🔰 节点选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: 📲 电报吹水
     type: select
     proxies:
       - 🔰 节点选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
       - 🎯 全球直连
   - name: 🍎 苹果服务
     type: select
@@ -939,73 +342,15 @@ Proxy Group:
       - 🎯 全球直连
       - 🔰 节点选择
       - ♻️ 自动选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -1021,73 +366,15 @@ Proxy Group:
       - 🔰 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇨🇳 CN-TW-台湾-35-cht.com.tw
-      - 🇨🇳 CN-TW-台湾-233-cht.com.tw
-      - 🇯🇵 JP-日本-东京-150-2-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-150-3-thinkhuge.net
-      - 🇯🇵 JP-日本-东京-250-thinkhuge.net
-      - 🇺🇲 USA-美国-费利蒙-9-linode.com
-      - 🇺🇲 USA-美国-费利蒙-12-linode.com
-      - 🇺🇲 USA-美国-费利蒙-37-linode.com
-      - 🇺🇲 USA-美国-费利蒙-40-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-134-443-linode.com
-      - 🇺🇲 USA-美国-费利蒙-178-linode.com
-      - 🇺🇲 USA-美国-洛杉矶-160-1-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-2-colocrossing.com
-      - 🇺🇲 USA-美国-洛杉矶-160-5-colocrossing.com
-      - 🇺🇲 USA-美国-纽瓦克-3-linode.com
-      - 🇺🇲 USA-美国-纽瓦克-4-linode.com
-      - 🇳🇱 NLD-荷兰-阿姆斯特丹-66-sharktech.net
-      - 🇨🇦 @SSRSUB-加拿大ss01-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss02-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss03-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss04-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss05-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss06-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss07-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss08-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss09-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss10-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss11-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss12-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss13-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss14-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss15-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss16-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss17-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss18-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss19-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss20-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss21-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大ss22-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss23-付费SSR推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国ss24-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss25-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss26-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss27-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss28-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss29-付费SSR推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯ss30-付费SSR推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V1-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V2-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V3-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V4-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V5-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V6-付费推荐:t.cn/EGJIyrl
-      - 🇨🇦 @SSRSUB-加拿大V7-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V8-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V9-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V10-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V11-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V12-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V13-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V14-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V15-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V16-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V17-付费推荐:t.cn/EGJIyrl
-      - 🇭🇰 @SSRSUB-香港V18-付费推荐:t.cn/EGJIyrl
-      - 🇺🇲 @SSRSUB-美国V19-付费推荐:t.cn/EGJIyrl
-      - 🇷🇺 @SSRSUB-俄罗斯V20-付费推荐:t.cn/EGJIyrl
+      - "\U0001F1F9\U0001F1FC 中国台湾省"
+      - "\U0001F1ED\U0001F1F0 中国香港"
+      - "\U0001F1EF\U0001F1F5 日本"
+      - "\U0001F1F8\U0001F1EC 新加坡"
+      - "\U0001F1F0\U0001F1F7 韩国"
+      - "\U0001F1F7\U0001F1FA 俄罗斯"
+      - "\U0001F1E8\U0001F1E6 加拿大"
+      - "\U0001F1FA\U0001F1F8 美国"
+      - "\U0001F1EC\U0001F1E7 英国"
 
 Rule:
  - DOMAIN-SUFFIX,local,🎯 全球直连
