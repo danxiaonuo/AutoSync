@@ -1,12 +1,11 @@
 payload:
-  - 'DOMAIN-SUFFIX,local'
-  - '192.168.0.0/16,no-resolve'
-  - '10.0.0.0/8,no-resolve'
-  - '172.16.0.0/12,no-resolve'
-  - '100.64.0.0/10,no-resolve'
-  - '127.0.0.0/8,no-resolve'
-  - '100.64.0.0/10,no-resolve'
-  - '::1/128,no-resolve'
-  - 'fc00::/7,no-resolve'
-  - 'fe80::/10,no-resolve'
-  - 'fd00::/8,no-resolve'
+DOMAIN-SUFFIX,local
+IP-CIDR,192.168.0.0/16,no-resolve
+IP-CIDR,10.0.0.0/8,no-resolve
+IP-CIDR,172.16.0.0/12,no-resolve
+IP-CIDR,127.0.0.0/8,no-resolve
+IP-CIDR,100.64.0.0/10,no-resolve
+IP-CIDR6,::1/128,no-resolve
+IP-CIDR6,fc00::/7,no-resolve
+IP-CIDR6,fe80::/10,no-resolve
+IP-CIDR6,fd00::/8,no-resolve
