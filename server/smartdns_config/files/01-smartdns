@@ -1,0 +1,11 @@
+dns_port=$(uci get smartdns.@smartdns[0].port 2>/dev/null)
+dnscache=$(uci get smartdns.@smartdns[0].cache_size 2>/dev/null)
+           uci delete dhcp.@dnsmasq[0].server 2>/dev/null
+	   uci add_list dhcp.@dnsmasq[0].server=127.0.0.1#$dns_port 2>/dev/null
+	   uci delete dhcp.@dnsmasq[0].resolvfile 2>/dev/null
+	   uci set dhcp.@dnsmasq[0].noresolv=1 2>/dev/null
+	   uci commit dhcp
+           if [ "$dnscache" -eq 0 ];then
+		uci set dhcp.@dnsmasq[0].cachesize=0 2>/dev/null
+		uci commit dhcp
+	   fi  
