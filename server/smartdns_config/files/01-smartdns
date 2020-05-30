@@ -1,3 +1,4 @@
+#!/bin/sh
 dns_port=$(uci get smartdns.@smartdns[0].port 2>/dev/null)
 dnscache=$(uci get smartdns.@smartdns[0].cache_size 2>/dev/null)
            uci delete dhcp.@dnsmasq[0].server 2>/dev/null
