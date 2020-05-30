@@ -192,15 +192,15 @@ Proxy Group:
   - name: 📹 YouTube
     type: select
     proxies:
-      - "\U0001F9EA YouTube"
       - 🔰 节点选择
       - ♻️ 自动选择
+      - "\U0001F9EA YouTube"
   - name: 🎥 NETFLIX
     type: select
     proxies:
-      - "\U0001F578 NETFLIX"
       - 🔰 节点选择
       - ♻️ 自动选择
+      - "\U0001F578 NETFLIX"
   - name: 📺 巴哈姆特
     type: select
     proxies:
