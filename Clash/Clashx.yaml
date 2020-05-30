@@ -144,39 +144,57 @@ proxy-provider:
         interval: 300
 Proxy Group:
   - name: "\U0001F1F9\U0001F1FC 中国台湾省"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - TW
   - name: "\U0001F1ED\U0001F1F0 中国香港"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - HK   
   - name: "\U0001F1EF\U0001F1F5 日本"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - JP  
   - name: "\U0001F1F8\U0001F1EC 新加坡"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - SG
   - name: "\U0001F1F0\U0001F1F7 韩国"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - KR
   - name: "\U0001F1F7\U0001F1FA 俄罗斯"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - RU
   - name: "\U0001F1E8\U0001F1E6 加拿大"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - CA
   - name: "\U0001F1FA\U0001F1F8 美国"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - US
   - name: "\U0001F1EC\U0001F1E7 英国"
-    type: select
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
     use:
     - GB
   - name: "\U0001F9EA YouTube"
@@ -191,8 +209,6 @@ Proxy Group:
     interval: 30
     use:
     - NETFLIX
-
-
   - name: 🌕 负载均衡
     type: load-balance
     url: 'http://www.gstatic.com/generate_204'
@@ -296,19 +312,17 @@ Proxy Group:
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
   - name: 📹 YouTube
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 30
+    type: select
     proxies:
       - "\U0001F9EA YouTube"
       - 🔰 节点选择
+      - ♻️ 自动选择
   - name: 🎥 NETFLIX
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 30
+    type: select
     proxies:
       - "\U0001F578 NETFLIX"
       - 🔰 节点选择
+      - ♻️ 自动选择
   - name: 📺 巴哈姆特
     type: select
     proxies:
