@@ -55,7 +55,7 @@ proxy-provider:
     HK:
       type: http
       path: provider-hk.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fssrsub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(HK%7c%e9%a6%99%e6%b8%af)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fssrsub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%ad%f0%9f%87%b0%7cHK%7c%e9%a6%99%e6%b8%af)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -64,7 +64,7 @@ proxy-provider:
     JP:
       type: http
       path: provider-jp.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(JP%7c%e6%97%a5%e6%9c%ac)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%af%f0%9f%87%b5%7cJP%7c%e6%97%a5%e6%9c%ac)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -73,7 +73,7 @@ proxy-provider:
     SG:
       type: http
       path: provider-sg.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(SG%7c%e6%96%b0%e5%8a%a0%e5%9d%a1)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%b8%f0%9f%87%ac%7cSG%7c%e6%96%b0%e5%8a%a0%e5%9d%a1)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -82,7 +82,7 @@ proxy-provider:
     KR:
       type: http
       path: provider-kr.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(KR%7c%e9%9f%a9%e5%9b%bd)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%b0%f0%9f%87%b7%7cKR%7c%e9%9f%a9%e5%9b%bd)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -91,7 +91,7 @@ proxy-provider:
     RU:
       type: http
       path: provider-ru.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(RU%7c%e4%bf%84%e7%bd%97%e6%96%af)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%b7%f0%9f%87%ba%7cRU%7c%e4%bf%84%e7%bd%97%e6%96%af)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -100,7 +100,7 @@ proxy-provider:
     CA:
       type: http
       path: provider-ca.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(CA%7c%e5%8a%a0%e6%8b%bf%e5%a4%a7)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%a8%f0%9f%87%a6%7cCA%7c%e5%8a%a0%e6%8b%bf%e5%a4%a7)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -109,7 +109,7 @@ proxy-provider:
     US:
       type: http
       path: provider-us.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(US%7c%e7%be%8e%e5%9b%bd)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%ba%f0%9f%87%b2%7cUS%7c%e7%be%8e%e5%9b%bd)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -118,7 +118,16 @@ proxy-provider:
     GB:
       type: http
       path: provider-gb.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(GB%7c%e8%8b%b1%e5%9b%bd)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%ac%f0%9f%87%a7%7cGB%7c%e8%8b%b1%e5%9b%bd)&list=true
+      interval: 3600
+      health-check:
+        enable: true
+        url: http://www.gstatic.com/generate_204
+        interval: 300
+    FR:
+      type: http
+      path: provider-fr.yaml
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(%f0%9f%87%ab%f0%9f%87%b7%7cFR%7c%e6%b3%95%e5%9b%bd)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -127,7 +136,7 @@ proxy-provider:
     YouTube:
       type: http
       path: provider-youtube.yaml
-      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(YouTube%7c%e6%b2%b9%e7%ae%a1)&list=true
+      url: https://api.10101.io/sub?target=clashr&url=https%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fss-sub%7chttps%3a%2f%2fraw.githubusercontent.com%2fdanxiaonuo%2fresources%2fmaster%2fv2ray%7chttps%3a%2f%2fjiang.netlify.app%7chttps%3a%2f%2fyoulianboshi.netlify.com%7chttps%3a%2f%2ffforever.github.io%2fv2rayfree%7chttps%3a%2f%2fwww.go4net.ga%2fv2ray.txt%7chttps%3a%2f%2fbihai-v2ray.netlify.com%7chttps%3a%2f%2fwww.namaho.org%2fservice%2fsubscribe%7chttps%3a%2f%2fwww.tiancai.ml%2fbaba.txt%7chttps%3a%2f%2fcdn.jsdelivr.net%2fgh%2ffggfffgbg%2fhttps-aishangyou.tube-%40master%2fREADME.md&include=(Youtube%7cYouTube%7c%e6%b2%b9%e7%ae%a1%7c%e6%b0%b4%e7%ae%a1)&list=true
       interval: 3600
       health-check:
         enable: true
@@ -160,6 +169,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -174,6 +184,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -189,6 +200,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 📹 YouTube
     type: select
     proxies:
@@ -214,6 +226,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 📲 电报吹水
     type: select
     proxies:
@@ -227,6 +240,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
       - 🎯 全球直连
   - name: Ⓜ️ 微软服务
     type: select
@@ -242,6 +256,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -257,6 +272,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 🌕 负载均衡
     type: load-balance
     url: 'http://www.gstatic.com/generate_204'
@@ -271,6 +287,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: ✈️ 最佳节点
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -285,6 +302,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: ♻️ 自动选择
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -300,6 +318,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -324,6 +343,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
+	  - "\U0001F1EB\U0001F1F7 法国"
   - name: "\U0001F1F9\U0001F1FC 中国台湾省"
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -378,6 +398,12 @@ Proxy Group:
     interval: 30
     use:
     - GB
+  - name: "\U0001F1EB\U0001F1F7 法国"
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    use:
+    - FR
   - name: "\U0001F9EA YouTube"
     type: url-test
     url: http://www.gstatic.com/generate_204
