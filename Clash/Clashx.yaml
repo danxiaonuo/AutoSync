@@ -169,7 +169,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 🌏 国内媒体
     type: select
     proxies:
@@ -184,7 +184,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -200,7 +200,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 📹 YouTube
     type: select
     proxies:
@@ -226,7 +226,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 📲 电报吹水
     type: select
     proxies:
@@ -240,7 +240,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
       - 🎯 全球直连
   - name: Ⓜ️ 微软服务
     type: select
@@ -256,7 +256,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -272,7 +272,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 🌕 负载均衡
     type: load-balance
     url: 'http://www.gstatic.com/generate_204'
@@ -287,7 +287,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: ✈️ 最佳节点
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -302,7 +302,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: ♻️ 自动选择
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -318,7 +318,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -343,7 +343,7 @@ Proxy Group:
       - "\U0001F1E8\U0001F1E6 加拿大"
       - "\U0001F1FA\U0001F1F8 美国"
       - "\U0001F1EC\U0001F1E7 英国"
-	  - "\U0001F1EB\U0001F1F7 法国"
+      - "\U0001F1EB\U0001F1F7 法国"
   - name: "\U0001F1F9\U0001F1FC 中国台湾省"
     type: url-test
     url: http://www.gstatic.com/generate_204
