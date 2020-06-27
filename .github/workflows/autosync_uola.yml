@@ -61,8 +61,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         docker rmi $(docker images -q)
-        sudo -E swapoff /swapfile
-        sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        sudo -E rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -y install git git-core subversion curl wget
         
     # 克隆源码
