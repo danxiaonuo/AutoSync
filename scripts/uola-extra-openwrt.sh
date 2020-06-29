@@ -12,7 +12,6 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci
 rm -rf package/xiaonuo/default-settings/.git*
 rm -rf package/xiaonuo/luci-theme-argon/.git*
 rm -rf .git*
-find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
