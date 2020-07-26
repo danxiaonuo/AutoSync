@@ -15,10 +15,9 @@ find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 修改automount配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/automount/files/15-automount > xiaonuo/automount/files/15-automount
 # 增加 smartdns
-cp -rfp net/smartdns xiaonuo/smartdns
-rm -rf net/smartdns
 git clone https://github.com/pymumu/luci-app-smartdns xiaonuo/luci-app-smartdns
+find . -type d -iname '.git' | xargs rm -rf
 # 修改smartdns配置文件
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > xiaonuo/smartdns/conf/smartdns.conf
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > xiaonuo/smartdns/conf/custom.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > net/smartdns/conf/smartdns.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > net/smartdns/conf/custom.conf
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/acld/files/luci-app-smartdns.json > xiaonuo/luci-app-smartdns/root/usr/share/rpcd/acl.d/luci-app-smartdns.json
