@@ -11,6 +11,9 @@ git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 rm -rf package/xiaonuo/default-settings/.git*
 rm -rf package/xiaonuo/luci-theme-argon/.git*
+# 增加 smartdns
+svn co https://github.com/project-openwrt/packages/branches/master/net/smartdns package/xiaonuo/smartdns
+git clone https://github.com/pymumu/luci-app-smartdns package/xiaonuo/luci-app-smartdns
 rm -rf .git*
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
