@@ -7,11 +7,16 @@ rm -rf xiaonuo/luci-theme-argon*
 cd ../
 # 增加 default-settings
 git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
-rm -rf package/xiaonuo/default-settings/.git*
-rm -rf package/xiaonuo/luci-theme-argon/.git*
-rm -rf .git*
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加net6
+svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
+find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+# 增加acld权限
+svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld package/xiaonuo/acld
+find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
@@ -54,3 +59,7 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/e
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/feeds.conf.default > feeds.conf.default
 # 修改automount配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/automount/files/15-automount > package/xiaonuo/automount/files/15-automount
+# 修改smartdns配置文件
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > package/xiaonuo/smartdns/conf/smartdns.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/acld/files/luci-app-smartdns.json > package/xiaonuo/luci-app-smartdns/root/usr/share/rpcd/acl.d/luci-app-smartdns.json
