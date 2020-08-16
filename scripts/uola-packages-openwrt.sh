@@ -1,6 +1,6 @@
 # 增加类库
 mkdir -pv xiaonuo
-git clone -b openwrt-18.06 --depth=1 https://github.com/project-openwrt/openwrt xiaonuo-test
+git clone -b master --depth=1 https://github.com/project-openwrt/openwrt xiaonuo-test
 mv xiaonuo-test/package xiaonuo-dev
 rm -rf xiaonuo-test
 \cp -rpf xiaonuo-dev/ctcgfw/* xiaonuo/ && \cp -rpf xiaonuo-dev/lean/* xiaonuo/ && \cp -rpf xiaonuo-dev/lienol/* xiaonuo/ && \cp -rpf xiaonuo-dev/ntlf9t/* xiaonuo/ && \cp -rpf xiaonuo-dev/zxlhhyccc/* xiaonuo/
@@ -19,6 +19,9 @@ svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 xiaonuo/net6
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加acld权限
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld xiaonuo/acld
+find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+# 增加smartdns
+svn co https://github.com/project-openwrt/openwrt/branches/openwrt-19.07/package/ntlf9t/smartdns xiaonuo/smartdns
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 修改smartdns配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > xiaonuo/smartdns/conf/smartdns.conf
