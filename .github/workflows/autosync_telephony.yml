@@ -6,7 +6,7 @@
 # Blog: https://www.danxiaonuo.com
 #=================================================
 
-name: 自动同步routing源码包
+name: 自动同步telephony源码包
 
 # 设置触发条件
 on:
