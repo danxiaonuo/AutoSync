@@ -76,7 +76,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: |
-          cd routing/
+          cd telephony/
           git config core.ignorecase false
           git init
           git config user.name $GITHUB_USER_NAME
