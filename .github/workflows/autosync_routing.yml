@@ -16,14 +16,14 @@ on:
   
 # 每周三的晚上3点钟自动更新
   schedule:
-     - cron: '0 3 * * 3'
+     - cron: '0 2 * * 3'
      
 # 环境变量
 env:
    # 源码仓库地址
    REPO_URL: https://github.com/project-openwrt/routing
    # 源码分支
-   REPO_BRANCH: master
+   REPO_BRANCH: openwrt-19.07
    # 时区设置
    TZ: Asia/Shanghai
    # 上传分支
