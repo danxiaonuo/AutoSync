@@ -21,9 +21,9 @@ on:
 # 环境变量
 env:
    # 源码仓库地址
-   REPO_URL: https://github.com/project-openwrt/luci
+   REPO_URL: https://github.com/coolsnowwolf/luci
    # 源码分支
-   REPO_BRANCH: openwrt-19.07
+   REPO_BRANCH: master
    # 时区设置
    TZ: Asia/Shanghai
    # 上传分支
@@ -58,14 +58,12 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi $(docker images -q)
-        sudo -E rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -y install git git-core subversion curl wget
         
     # 克隆源码
     - name: 克隆源码
       run: |
-        git clone $REPO_URL -b $REPO_BRANCH luci
+        git clone --depth=1 $REPO_URL -b $REPO_BRANCH luci
         cd luci
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
