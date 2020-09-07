@@ -1,16 +1,16 @@
 # 增加类库
 mkdir -pv xiaonuo
-git clone --depth=1 -b openwrt-18.06 https://github.com/project-openwrt/openwrt xiaonuo-test
+git clone -b openwrt-18.06 https://github.com/project-openwrt/openwrt xiaonuo-test
 mv xiaonuo-test/package xiaonuo-dev
 rm -rf xiaonuo-test
 \cp -rpf xiaonuo-dev/ctcgfw/* xiaonuo/ && \cp -rpf xiaonuo-dev/lean/* xiaonuo/ && \cp -rpf xiaonuo-dev/lienol/* xiaonuo/ && \cp -rpf xiaonuo-dev/ntlf9t/* xiaonuo/ && \cp -rpf xiaonuo-dev/zxlhhyccc/* xiaonuo/
 rm -rf xiaonuo-dev
 # 增加 default-settings
 rm -rf xiaonuo/default-settings
-git clone --depth=1 https://github.com/danxiaonuo/default-settings xiaonuo/default-settings
+git clone https://github.com/danxiaonuo/default-settings xiaonuo/default-settings
 # 增加 luci-theme-argon
 rm -rf xiaonuo/luci-theme-argon
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git xiaonuo/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git xiaonuo/luci-theme-argon
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 xiaonuo/net6
 # 增加acld权限
