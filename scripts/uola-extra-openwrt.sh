@@ -1,15 +1,15 @@
 # 应用软件设置
 pushd package
 mv lean xiaonuo 
+popd
 # 增加 default-settings
-rm -rf xiaonuo/default-settings
+rm -rf package/xiaonuo/default-settings
 git clone --depth=1 https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 # 增加 luci-theme-argon
-rm -rf xiaonuo/luci-theme-argon
+rm -rf package/xiaonuo/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 # 删除 docker
-rm -rf xiaonuo/luci-app-docker xiaonuo/luci-app-dockerman
-popd
+rm -rf package/xiaonuo/luci-app-docker package/xiaonuoluci-app-dockerman
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
 # 增加acld权限
