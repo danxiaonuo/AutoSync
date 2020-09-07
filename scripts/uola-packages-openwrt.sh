@@ -8,19 +8,25 @@ rm -rf xiaonuo-dev
 # 增加 default-settings
 rm -rf xiaonuo/default-settings
 git clone --depth=1 https://github.com/danxiaonuo/default-settings xiaonuo/default-settings
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-theme-argon
 rm -rf xiaonuo/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git xiaonuo/luci-theme-argon
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 xiaonuo/net6
+find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加acld权限
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld xiaonuo/acld
+find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加 Project OpenWrt's autocore
 rm -rf  xiaonuo/autocore
 svn co https://github.com/project-openwrt/openwrt/branches/openwrt-18.06-k5.4/package/lean/autocore xiaonuo/autocore
+find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 修复 libssh
 rm -rf libs/libssh
 svn co https://github.com/openwrt/packages/trunk/libs/libssh libs/libssh
+find libs/. -type d -iname '.svn' | xargs rm -rf
 # 修复 mt76 wireless driver
 curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > kernel/mt76/Makefile
 # 修改smartdns配置文件
