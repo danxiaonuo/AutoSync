@@ -1,10 +1,10 @@
 # 应用软件设置
-pushd package
+cd package
 mv lean xiaonuo 
-popd
+cd ..
 # 增加 default-settings
 rm -rf package/xiaonuo/default-settings
-git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
+git clone --depth=1 https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 # 增加 luci-theme-argon
 rm -rf package/xiaonuo/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
@@ -15,15 +15,11 @@ svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/
 # 增加acld权限
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld package/xiaonuo/acld
 # 增加 Project OpenWrt's autocore
-pushd package/xiaonuo
-rm -rf autocore
-svn co https://github.com/project-openwrt/openwrt/branches/openwrt-18.06-k5.4/package/lean/autocore
+rm -rf  package/xiaonuo/autocore
+svn co https://github.com/project-openwrt/openwrt/branches/openwrt-18.06-k5.4/package/lean/autocore package/xiaonuo/autocore
 popd
 # 修复 mt76 wireless driver
-pushd package/kernel/mt76
-rm -f Makefile
-wget https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile
-popd
+curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > package/kernel/mt76/Makefile
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
