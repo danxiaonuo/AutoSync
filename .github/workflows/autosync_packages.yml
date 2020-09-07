@@ -21,9 +21,9 @@ on:
 # 环境变量
 env:
    # 源码仓库地址
-   REPO_URL: https://github.com/project-openwrt/packages
+   REPO_URL: https://github.com/Lienol/openwrt-packages
    # 源码分支
-   REPO_BRANCH: openwrt-19.07
+   REPO_BRANCH: dev-19.07
    # 时区设置
    TZ: Asia/Shanghai
    # 上传分支
