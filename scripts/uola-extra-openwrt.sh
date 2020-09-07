@@ -1,13 +1,11 @@
 # 应用软件设置
-cd package
-mv lean xiaonuo 
-cd ..
+mv package/lean package/xiaonuo
 # 增加 default-settings
 rm -rf package/xiaonuo/default-settings
 git clone --depth=1 https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 # 增加 luci-theme-argon
 rm -rf package/xiaonuo/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 # 删除 docker
 rm -rf package/xiaonuo/luci-app-docker package/xiaonuoluci-app-dockerman
 # 增加net6
@@ -17,7 +15,6 @@ svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld package/xiaonuo/
 # 增加 Project OpenWrt's autocore
 rm -rf  package/xiaonuo/autocore
 svn co https://github.com/project-openwrt/openwrt/branches/openwrt-18.06-k5.4/package/lean/autocore package/xiaonuo/autocore
-popd
 # 修复 mt76 wireless driver
 curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > package/kernel/mt76/Makefile
 # 增加版本号
