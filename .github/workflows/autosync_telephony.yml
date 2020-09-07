@@ -21,7 +21,7 @@ on:
 # 环境变量
 env:
    # 源码仓库地址
-   REPO_URL: https://github.com/openwrt/telephony
+   REPO_URL: https://git.openwrt.org/feed/telephony
    # 源码分支
    REPO_BRANCH: openwrt-19.07
    # 时区设置
