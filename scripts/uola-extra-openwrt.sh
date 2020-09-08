@@ -8,7 +8,7 @@ find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 rm -rf package/xiaonuo/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
-# 删除 docker
+# 增加 docker
 rm -rf package/xiaonuo/luci-app-docker package/xiaonuo/luci-app-dockerman
 git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman package/xiaonuo/luci-app-dockerman
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
@@ -26,6 +26,14 @@ svn co https://github.com/project-openwrt/openwrt/branches/openwrt-18.06-k5.4/pa
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 修复 mt76 wireless driver
 curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > package/kernel/mt76/Makefile
+# 修复 k3
+rm -rf package/xiaonuo/k3screenctrl*
+git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git package/k3/luci-app-k3screenctrl package/xiaonuo/luci-app-k3screenctrl
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/k3/k3screenctrl package/xiaonuo/k3screenctrl
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/k3/k3screenctrl_build package/xiaonuo/k3screenctrl_build
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
