@@ -38,7 +38,7 @@ find libs/. -type d -iname '.svn' | xargs rm -rf
 # 修复 mt76 wireless driver
 curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > kernel/mt76/Makefile
 # 修复 k3
-rm -rf xiaonuo/k3screenctrl*
+rm -rf xiaonuo/*k3screenctrl*
 git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git xiaonuo/luci-app-k3screenctrl
 find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 git clone --depth=1 https://github.com/lwz322/k3screenctrl.git xiaonuo/k3screenctrl
