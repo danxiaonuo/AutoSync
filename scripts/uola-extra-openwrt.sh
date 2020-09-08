@@ -10,6 +10,10 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git p
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 删除 docker
 rm -rf package/xiaonuo/luci-app-docker package/xiaonuo/luci-app-dockerman
+git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman package/xiaonuo/luci-app-dockerman
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lisaac/luci-lib-docker package/xiaonuo/luci-lib-docker
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
