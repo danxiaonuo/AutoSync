@@ -28,11 +28,11 @@ find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > package/kernel/mt76/Makefile
 # 修复 k3
 rm -rf package/xiaonuo/k3screenctrl*
-git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git package/k3/luci-app-k3screenctrl package/xiaonuo/luci-app-k3screenctrl
+git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git package/xiaonuo/luci-app-k3screenctrl
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
-git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/k3/k3screenctrl package/xiaonuo/k3screenctrl
+git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/xiaonuo/k3screenctrl
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
-git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/k3/k3screenctrl_build package/xiaonuo/k3screenctrl_build
+git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/xiaonuo/k3screenctrl_build
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
