@@ -15,6 +15,12 @@ find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 rm -rf xiaonuo/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git xiaonuo/luci-theme-argon
 find xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加 docker
+rm -rf xiaonuo/luci-app-docker xiaonuo/luci-app-dockerman
+git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman xiaonuo/luci-app-dockerman
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lisaac/luci-lib-docker xiaonuo/luci-lib-docker
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 xiaonuo/net6
 find xiaonuo/. -type d -iname '.svn' | xargs rm -rf
@@ -31,6 +37,14 @@ svn co https://github.com/openwrt/packages/trunk/libs/libssh libs/libssh
 find libs/. -type d -iname '.svn' | xargs rm -rf
 # 修复 mt76 wireless driver
 curl -fsSL https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile > kernel/mt76/Makefile
+# 修复 k3
+rm -rf xiaonuo/k3screenctrl*
+git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git package/k3/luci-app-k3screenctrl xiaonuo/luci-app-k3screenctrl
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/k3/k3screenctrl xiaonuo/k3screenctrl
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/k3/k3screenctrl_build xiaonuo/k3screenctrl_build
+find xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 修改smartdns配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > net/smartdns/conf/smartdns.conf
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > net/smartdns/conf/custom.conf
