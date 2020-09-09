@@ -59,6 +59,9 @@ git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/xiaonuo/k
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/xiaonuo/k3screenctrl_build
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加 helloworld
+git clone --depth=1 https://github.com/fw876/helloworld package/xiaonuo/helloworld
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
