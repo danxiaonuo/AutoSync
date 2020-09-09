@@ -8,7 +8,10 @@ rm -rf xiaonuo-dev
 # 移除设备驱动
 rm -rf xiaonuo/r8125 xiaonuo/r8168 xiaonuo/rtl8192du xiaonuo/rtl8821cu xiaonuo/rtl88x2bu
 # 重新命名
-mv xiaonuo/openwrt-chinadns-ng xiaonuo/chinadns-ng && mv xiaonuo/openwrt-simple-obfs xiaonuo/simple-obfs && mv xiaonuo/openwrt-ssocks xiaonuo/ssocks && mv xiaonuo/openwrt-udpspeeder xiaonuo/udpspeeder && mv xiaonuo/openwrt-v2ray-plugin xiaonuo/v2ray-plugin
+mv xiaonuo/openwrt-chinadns-ng xiaonuo/chinadns-ng && mv xiaonuo/openwrt-simple-obfs xiaonuo/simple-obfs && mv xiaonuo/openwrt-ssocks xiaonuo/ssocks 
+mv xiaonuo/openwrt-udpspeeder xiaonuo/udpspeeder && mv xiaonuo/openwrt-v2ray-plugin xiaonuo/v2ray-plugin
+mv xiaonuo/openwrt-Pcap_DNSProxy xiaonuo/Pcap_DNSProxy && mv xiaonuo/openwrt-chinadns xiaonuo/chinadns && mv xiaonuo/openwrt-dnsforwarder xiaonuo/dnsforwarder 
+mv xiaonuo/openwrt-pdnsd-full xiaonuo/pdnsd-full && mv xiaonuo/openwrt-shadowvpn-master xiaonuo/shadowvpn && mv xiaonuo/openwrt-fullconenat xiaonuo/fullconenat 
 # 增加 default-settings
 rm -rf xiaonuo/default-settings
 git clone --depth=1 https://github.com/danxiaonuo/default-settings xiaonuo/default-settings
