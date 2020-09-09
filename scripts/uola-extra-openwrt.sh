@@ -8,6 +8,31 @@ find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 rm -rf package/xiaonuo/luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加 smartdns
+svn co https://github.com/pymumu/smartdns/trunk/package/openwrt package/xiaonuo/smartdns
+find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns package/xiaonuo/luci-app-smartdns
+find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+# 增加 Server酱
+git clone --depth=1 https://github.com/tty228/luci-app-serverchan package/xiaonuo/luci-app-serverchan
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加 clash
+git clone --depth=1 https://github.com/frainzy1477/luci-app-clash.git package/xiaonuo/luci-app-clash
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加 OpenClash
+git clone --depth=1 -b master https://github.com/vernesong/OpenClash package/xiaonuo/OpenClash
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+# 增加 luci-app-adguardhome
+git clone --depth=1 https://github.com/rufengsuixing/luci-app-adguardhome package/xiaonuo/luci-app-adguardhome
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/AdGuardHome package/xiaonuo/AdGuardHome
+find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+# 增加 gotop
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop package/xiaonuo/gotop
+find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+# 增加 OpenAppFilter
+git clone --depth=1 https://github.com/destan19/OpenAppFilter package/xiaonuo/OpenAppFilter
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 docker
 rm -rf package/xiaonuo/luci-app-docker package/xiaonuo/luci-app-dockerman
 git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman package/xiaonuo/luci-app-dockerman
