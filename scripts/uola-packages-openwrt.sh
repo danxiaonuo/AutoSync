@@ -9,7 +9,7 @@ rm -rf xiaonuo-dev
 rm -rf xiaonuo/r8125 xiaonuo/r8168 xiaonuo/rtl8192du xiaonuo/rtl8821cu xiaonuo/rtl88x2bu
 # 重新命名
 mv xiaonuo/openwrt-chinadns-ng xiaonuo/chinadns-ng && mv xiaonuo/openwrt-simple-obfs xiaonuo/simple-obfs && mv xiaonuo/openwrt-ssocks xiaonuo/ssocks 
-mv xiaonuo/openwrt-udpspeeder xiaonuo/udpspeeder && mv xiaonuo/openwrt-v2ray-plugin xiaonuo/v2ray-plugin && mv xiaonuo/openwrt-udp2raw xiaonuo/udp2raw
+mv xiaonuo/openwrt-udpspeeder xiaonuo/udpspeeder && mv xiaonuo/openwrt-v2ray-plugin xiaonuo/v2ray-plugin && mv xiaonuo/openwrt-udp2raw xiaonuo/udp2raw-tunnel
 mv xiaonuo/openwrt-Pcap_DNSProxy xiaonuo/Pcap_DNSProxy && mv xiaonuo/openwrt-chinadns xiaonuo/chinadns && mv xiaonuo/openwrt-dnsforwarder xiaonuo/dnsforwarder 
 mv xiaonuo/openwrt-pdnsd-full xiaonuo/pdnsd-full && mv xiaonuo/openwrt-shadowvpn-master xiaonuo/shadowvpn && mv xiaonuo/openwrt-fullconenat xiaonuo/fullconenat 
 # 增加 default-settings
