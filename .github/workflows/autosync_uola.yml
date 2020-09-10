@@ -71,6 +71,7 @@ jobs:
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
         cp -rf /home/runner/work/AutoSync/AutoSync/server/uola/README.md .
+        cp -rf /home/runner/work/AutoSync/AutoSync/server/uola/LICENSE .
       
     # 加载自定义脚本  
     - name: 加载自定义脚本
