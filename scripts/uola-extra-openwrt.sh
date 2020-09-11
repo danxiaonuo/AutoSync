@@ -33,10 +33,8 @@ sed -i 's/UTC/CST-8/g' package/base-files/files/bin/config_generate
 sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' package/base-files/files/etc/passwd
 # 增加文件描述符
 sed -i '/KSH_VERSION/i\ulimit -S unlimited\nulimit -H unlimited\nulimit -c unlimited\nulimit -u unlimited\nulimit -n 655360\nulimit -d unlimited\nulimit -m unlimited\nulimit -s unlimited\nulimit -t unlimited\nulimit -v unlimited\n' package/base-files/files/etc/profile
-# 增加net6
-sed -i 's/odhcp6c/& net6/' include/target.mk
-# 增加smartdns
-sed -i 's/base-files/& smartdns luci-app-smartdns acld/' include/target.mk
+# 修改LuCI 配置
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/target.mk > include/target.mk
 # 删除wifi禁用
 sed -i '/set wireless.radio${devidx}.disabled/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 增加 SSID 2.5G
