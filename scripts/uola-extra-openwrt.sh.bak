@@ -2,13 +2,13 @@
 cd package
 mkdir -pv xiaonuo && \cp -rpf ctcgfw/* xiaonuo/ && \cp -rpf lean/* xiaonuo/ && \cp -rpf lienol/* xiaonuo/ && \cp -rpf ntlf9t/* xiaonuo/ && \cp -rpf zxlhhyccc/* xiaonuo/
 rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
-rm -rf xiaonuo/default-settings
-rm -rf xiaonuo/luci-theme-argon*
 cd ../
 # 增加 default-settings
+rm -rf xiaonuo/default-settings
 git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-theme-argon
+rm -rf xiaonuo/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加net6
@@ -60,5 +60,5 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/f
 # 修改automount配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/automount/files/15-automount > package/xiaonuo/automount/files/15-automount
 # 修改smartdns配置文件
-# curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > package/xiaonuo/smartdns/conf/smartdns.conf
-# curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > package/xiaonuo/smartdns/conf/smartdns.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
