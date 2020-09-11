@@ -1,5 +1,5 @@
 src-git packages https://github.com/danxiaonuo/packages.git
 src-git luci https://github.com/danxiaonuo/luci.git
-src-git routing https://git.openwrt.org/feed/routing.git
-src-git telephony https://git.openwrt.org/feed/telephony.git
+src-git routing https://github.com/danxiaonuo/routing.git
+src-git telephony https://github.com/danxiaonuo/telephony.git
 src-git freifunk https://github.com/danxiaonuo/freifunk.git
