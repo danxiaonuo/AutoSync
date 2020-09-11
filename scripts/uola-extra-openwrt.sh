@@ -77,7 +77,7 @@ sed -i 's/UTC/CST-8/g' package/base-files/files/bin/config_generate
 # 修改root执行权限
 sed -i 's|root:x:0:0:root:/root:/bin/ash|root:x:0:0:root:/root:/bin/bash|g' package/base-files/files/etc/passwd
 # 增加文件描述符
-sed -i '/KSH_VERSION/i\ulimit -S unlimited\nulimit -H unlimited\nulimit -c unlimited\nulimit -u unlimited\nulimit -n 655360\nulimit -d unlimited\nulimit -m unlimited\nulimit -s unlimited\nulimit -t unlimited\nulimit -v unlimited\n' package/base-files/files/etc/profile
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/etc/profile > package/base-files/files/etc/profile
 # 修改LuCI 配置
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/target.mk > include/target.mk
 # 删除wifi禁用
