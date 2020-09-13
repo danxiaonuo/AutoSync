@@ -5,11 +5,11 @@ rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
 cd ../
 # 增加 default-settings
 rm -rf package/xiaonuo/default-settings
-git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
+git clone --depth=1 https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-theme-argon
 rm -rf package/xiaonuo/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
@@ -17,6 +17,14 @@ find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加acld权限
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld package/xiaonuo/acld
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+# 修复 k3
+rm -rf package/xiaonuo/luci-app-k3screenctrl package/xiaonuo/k3screenctrl
+git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git package/xiaonuo/luci-app-k3screenctrl
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/xiaonuo/k3screenctrl
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/xiaonuo/k3screenctrl_build
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加版本号
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_release > package/base-files/files/etc/openwrt_release
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/uola/uola_version/openwrt_version > package/base-files/files/etc/openwrt_version
