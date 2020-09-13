@@ -14,14 +14,12 @@ DEVICE_TYPE?=router
 
 # Default packages - the really basic set
 DEFAULT_PACKAGES:=base-files smartdns luci-app-smartdns acld libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd urandom-seed urngd \
-		  block-mount coremark kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates \
-		  default-settings luci luci-base luci-compat luci-lib-fs luci-lib-ipkg luci-proto-relay \
-		  luci-app-sqm luci-app-upnp luci-app-autoreboot \
-		  luci-app-filetransfer luci-app-vsftpd luci-app-ramfree luci-app-cpufreq \
-		  luci-app-arpbind luci-app-vlmcsd luci-app-wol  \
-		  luci-app-turboacc luci-app-nlbwmon luci-app-accesscontrol  \
+block-mount kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates \
+default-settings luci luci-app-upnp luci-app-autoreboot luci-app-arpbind luci-app-vlmcsd \
+luci-app-filetransfer luci-app-vsftpd  luci-app-wol luci-app-ramfree \
+luci-app-turboacc luci-app-nlbwmon luci-app-accesscontrol luci-app-cpufreq
 # For nas targets
-DEFAULT_PACKAGES.nas:=block-mount fdisk lsblk mdadm automount autosamba luci-app-usb-printer
+DEFAULT_PACKAGES.nas:=block-mount fdisk lsblk mdadm
 # For router targets
 DEFAULT_PACKAGES.router:=dnsmasq-full net6 iptables ppp ppp-mod-pppoe firewall
 DEFAULT_PACKAGES.bootloader:=
@@ -55,10 +53,6 @@ else
   ifneq ($(SUBTARGET),)
     -include ./$(SUBTARGET)/target.mk
   endif
-endif
-
-ifneq ($(filter 4.9,$(KERNEL_PATCHVER)),)
-  DEFAULT_PACKAGES.router:=$(filter-out kmod-ipt-offload,$(DEFAULT_PACKAGES.router))
 endif
 
 # Add device specific packages (here below to allow device type set from subtarget)
@@ -183,8 +177,8 @@ ifeq ($(DUMP),1)
     CPU_CFLAGS_octeonplus = -march=octeon+ -mabi=64
   endif
   ifeq ($(ARCH),i386)
-    CPU_TYPE ?= pentium
-    CPU_CFLAGS_pentium = -march=pentium-mmx
+    CPU_TYPE ?= pentium-mmx
+    CPU_CFLAGS_pentium-mmx = -march=pentium-mmx
     CPU_CFLAGS_pentium4 = -march=pentium4
   endif
   ifneq ($(findstring arm,$(ARCH)),)
@@ -232,7 +226,9 @@ ifeq ($(DUMP),1)
     .PRECIOUS: $(TMP_CONFIG)
 
     ifdef KERNEL_TESTING_PATCHVER
-      FEATURES += testing-kernel
+      ifneq ($(KERNEL_TESTING_PATCHVER),$(KERNEL_PATCHVER))
+        FEATURES += testing-kernel
+      endif
     endif
     ifneq ($(CONFIG_OF),)
       FEATURES += dt
