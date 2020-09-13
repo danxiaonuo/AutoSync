@@ -4,12 +4,12 @@ mkdir -pv xiaonuo && \cp -rpf ctcgfw/* xiaonuo/ && \cp -rpf lean/* xiaonuo/ && \
 rm -rf ctcgfw lean lienol ntlf9t zxlhhyccc
 cd ../
 # 增加 default-settings
-rm -rf xiaonuo/default-settings
+rm -rf package/xiaonuo/default-settings
 git clone https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-theme-argon
-rm -rf xiaonuo/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
+rm -rf package/xiaonuo/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
