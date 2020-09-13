@@ -22,7 +22,6 @@ find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 rm -rf package/xiaonuo/luci-app-openclash
 svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash package/xiaonuo/luci-app-openclash
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
-# 增加 luci-app-adguardhome
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
