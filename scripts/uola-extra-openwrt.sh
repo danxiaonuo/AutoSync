@@ -20,8 +20,11 @@ git clone --depth=1 https://github.com/frainzy1477/luci-app-clash.git package/xi
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 OpenClash
 rm -rf package/xiaonuo/luci-app-openclash
-svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash package/xiaonuo/luci-app-openclash
-find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+git clone --depth=1 https://github.com/vernesong/OpenClash package/xiaonuo/OpenClash
+mv package/xiaonuo/OpenClash/luci-app-openclash package/xiaonuo/luci-app-openclash
+rm -rf package/xiaonuo/OpenClash
+find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
+find package/xiaonuo/luci-app-openclash/. -type d -iname '.svn' | xargs rm -rf
 # 增加net6
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
