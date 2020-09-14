@@ -8,7 +8,7 @@ rm -rf package/xiaonuo/default-settings
 git clone --depth=1 https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-theme-argon
-rm -rf package/xiaonuo/luci-theme-argon
+rm -rf package/xiaonuo/luci-theme-argon*
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-app-argon-config
