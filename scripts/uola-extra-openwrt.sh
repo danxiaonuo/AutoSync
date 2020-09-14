@@ -12,6 +12,7 @@ rm -rf package/xiaonuo/luci-theme-argon*
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 luci-app-argon-config
+rm -rf package/xiaonuo/luci-app-argon-config
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/xiaonuo/luci-app-argon-config
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 clash
