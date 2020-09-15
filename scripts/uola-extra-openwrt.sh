@@ -19,6 +19,7 @@ find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 rm -rf package/xiaonuo/luci-app-clash
 git clone --depth=1 https://github.com/frainzy1477/luci-app-clash.git package/xiaonuo/luci-app-clash
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/clash/init.d/clash > package/xiaonuo/luci-app-clash/root/etc/init.d/clash
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/clash/config/clash > package/xiaonuo/luci-app-clash/root/etc/config/clash
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 OpenClash
 rm -rf package/xiaonuo/luci-app-openclash
