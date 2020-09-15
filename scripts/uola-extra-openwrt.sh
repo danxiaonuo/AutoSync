@@ -17,8 +17,8 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/x
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 clash
 rm -rf package/xiaonuo/luci-app-clash
-curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/clash/init.d/clash > package/xiaonuo/luci-app-clash/root/etc/init.d/clash
 git clone --depth=1 https://github.com/frainzy1477/luci-app-clash.git package/xiaonuo/luci-app-clash
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/clash/init.d/clash > package/xiaonuo/luci-app-clash/root/etc/init.d/clash
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 OpenClash
 rm -rf package/xiaonuo/luci-app-openclash
