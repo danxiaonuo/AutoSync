@@ -1,5 +1,5 @@
 #=================================================
-# https://github.com/danxiaonuo/uola
+# https://github.com/danxiaonuo/Uola
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
 # Author: danxiaonuo
@@ -33,13 +33,13 @@ env:
    # Github 邮箱
    GITHUB_USER_EMAIL: ${{ secrets.EMAIL }}
    # Github
-   GITHUB_RROJECT: github.com/danxiaonuo/uola.git
+   GITHUB_RROJECT: github.com/danxiaonuo/Uola.git
    # 分支
    BRANCH: master
    # 自定义执行脚本名称
    DIY_SH: scripts/uola-extra-openwrt.sh
    # GITHUB项目路径
-   GITHUB_PATH: /home/runner/work/AutoSync/AutoSync/uola
+   GITHUB_PATH: /home/runner/work/AutoSync/AutoSync/Uola
    
    # 任务集
 jobs:
@@ -65,8 +65,8 @@ jobs:
     # 克隆源码
     - name: 克隆源码
       run: |
-        git clone --depth=1 $REPO_URL -b $REPO_BRANCH uola
-        cd uola
+        git clone --depth=1 $REPO_URL -b $REPO_BRANCH Uola
+        cd Uola
         rm -rf .svn && rm -rf *.md && rm -rf LICENSE rm -rf README MAINTAINERS LICENSE
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.svn' | xargs rm -rf
         find ${{ env.GITHUB_PATH }}/. -type d -iname '.git' | xargs rm -rf
@@ -85,11 +85,11 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       run: |
-          cd uola/
+          cd Uola/
           git config core.ignorecase false
           git init
           git config user.name $GITHUB_USER_NAME
           git config user.email $GITHUB_USER_EMAIL
           git add .
-          git commit -a -m "Update uola"
+          git commit -a -m "Update Uola"
           git push --force --quiet https://${{ secrets.RELEASE_TOKEN }}@$GITHUB_RROJECT HEAD:$BRANCH
