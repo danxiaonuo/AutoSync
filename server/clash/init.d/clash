@@ -657,6 +657,8 @@ if  [  -f $CONFIG_YAML ] && [ "$(ls -l $CONFIG_YAML|awk '{print int($5)}')" -ne 
 		echo "Clash运行中" >$REAL_LOG
 		sleep 1
 		echo "Clash for OpenWRT" >$REAL_LOG
+		echo "重启网络" >$REAL_LOG
+        /etc/init.d/network restart >/dev/null 2>&1
 	fi
 	if ! pidof clash >/dev/null; then
       		remove_mark 2>/dev/null
@@ -691,8 +693,6 @@ else
 		echo "Clash for OpenWRT" >$REAL_LOG
 	fi
 fi
-echo "重启网络" >$REAL_LOG
-/etc/init.d/network restart
 #=========================================================================================================================== 
 }
 
@@ -939,7 +939,7 @@ stop(){
 			kill $(pidof clash) >/dev/null 2>&1 || kill -9 $(ps | grep clash | grep -v grep | awk '{print $1}') >/dev/null 2>&1
 		fi
 		echo "重启网络" >$REAL_LOG
-		/etc/init.d/network restart
+        /etc/init.d/network restart >/dev/null 2>&1
 
 
 #=========================================================================================================================== 	
@@ -951,12 +951,12 @@ restart(){
 			stop  >/dev/null 2>&1
 			start >/dev/null 2>&1
 			echo "重启网络" >$REAL_LOG
-			/etc/init.d/network restart
+            /etc/init.d/network restart >/dev/null 2>&1
 			echo "Clash Successfully Restarted"			
 		else
 		    start >/dev/null 2>&1
 			echo "重启网络" >$REAL_LOG
-			/etc/init.d/network restart
+            /etc/init.d/network restart >/dev/null 2>&1
 			echo "Clash Successfully Started"
 		fi
 #=========================================================================================================================== 
