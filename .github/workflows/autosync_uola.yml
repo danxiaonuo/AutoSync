@@ -77,7 +77,7 @@ jobs:
     - name: 加载自定义脚本
       run: |
         chmod +x $DIY_SH
-        cd uola
+        cd Uola
         ../$DIY_SH
         
     # 上传到分支
