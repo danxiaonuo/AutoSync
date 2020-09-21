@@ -20,11 +20,11 @@ REAL_LOG="/usr/share/clash/clash_real.txt"
 revert_dns() {
 #===========================================================================================================================  
     dns_port=$(grep "^ \{0,\}listen:" $CONFIG_YAML |awk -F ':' '{print $3}' 2>/dev/null) 
-	uci del_list dhcp.@dnsmasq[0].server=127.0.0.1#$dns_port >/dev/null 2>&1
-	uci set dhcp.@dnsmasq[0].noresolv=0
-	uci delete dhcp.@dnsmasq[0].cachesize
+	# uci del_list dhcp.@dnsmasq[0].server=127.0.0.1#$dns_port >/dev/null 2>&1
+	# uci set dhcp.@dnsmasq[0].noresolv=0
+	# uci delete dhcp.@dnsmasq[0].cachesize
 	rm -rf $CUSLIST $CUSLITT  $CUSLISTV $CUSLITTV 2>/dev/null
-	uci commit dhcp
+	# uci commit dhcp
 	/etc/init.d/dnsmasq restart >/dev/null 2>&1
 #=========================================================================================================================== 	 
 }
@@ -662,7 +662,7 @@ if  [  -f $CONFIG_YAML ] && [ "$(ls -l $CONFIG_YAML|awk '{print int($5)}')" -ne 
 	fi
 	if ! pidof clash >/dev/null; then
       		remove_mark 2>/dev/null
-      		kill -9 `pidof clash|sed "s/$//g"` 2>/dev/null
+      		killall `pidof clash|sed "s/$//g"` 2>/dev/null
 	  	sleep 1
 	  	echo "Clash for OpenWRT" >$REAL_LOG
     fi
@@ -899,7 +899,7 @@ stop(){
 		
 		bash /usr/share/clash/backup.sh >/dev/null 2>&1
 		
-		kill -9 `pidof clash|sed "s/$//g"` 2>/dev/null
+		killall `pidof clash|sed "s/$//g"` 2>/dev/null
 
 		if [ "${lang}" == "en" ] || [ $lang == "auto" ];then
 			echo "Clash Core Stoped Successfully " >$REAL_LOG 
@@ -923,6 +923,7 @@ stop(){
 
 		echo "0" > /usr/share/clash/logstatus_check >/dev/null 2>&1
 		
+		
 		if [ "${lang}" == "en" ] || [ $lang == "auto" ];then
 			echo "  $(date "+%Y-%m-%d %H:%M:%S") - CLIENT IS DISABLED " >> /usr/share/clash/clash.txt
 			echo "Client is Disabled " >$REAL_LOG
@@ -936,8 +937,16 @@ stop(){
 		fi		
 	
 		if pidof clash >/dev/null; then
-			kill $(pidof clash) >/dev/null 2>&1 || kill -9 $(ps | grep clash | grep -v grep | awk '{print $1}') >/dev/null 2>&1
+			kill $(pidof clash) >/dev/null 2>&1 || killall $(ps | grep clash | grep -v grep | awk '{print $1}') >/dev/null 2>&1
 		fi
+		
+		dns_port=$(grep "^ \{0,\}listen:" $CONFIG_YAML |awk -F ':' '{print $3}' 2>/dev/null) 
+	    uci del_list dhcp.@dnsmasq[0].server=127.0.0.1#$dns_port >/dev/null 2>&1
+	    uci set dhcp.@dnsmasq[0].noresolv=0
+	    uci delete dhcp.@dnsmasq[0].cachesize
+	    rm -rf $CUSLIST $CUSLITT  $CUSLISTV $CUSLITTV 2>/dev/null
+	    uci commit dhcp
+	    /etc/init.d/dnsmasq restart >/dev/null 2>&1
 		echo "重启网络" >$REAL_LOG
         /etc/init.d/network restart >/dev/null 2>&1
 
