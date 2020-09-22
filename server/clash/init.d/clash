@@ -1,5 +1,4 @@
 #!/bin/sh /etc/rc.common
-set -x
 
 START=99
 STOP=15
@@ -617,8 +616,6 @@ start() {
 					echo "Clash运行中" >$REAL_LOG
 					sleep 1
 					echo "Clash for OpenWRT" >$REAL_LOG
-					# echo "重启网络" >$REAL_LOG
-					/etc/init.d/network restart >/dev/null 2>&1
 				fi
 				if ! pidof clash >/dev/null; then
 					remove_mark 2>/dev/null
@@ -895,9 +892,7 @@ stop() {
 	rm -rf $CUSLIST $CUSLITT $CUSLISTV $CUSLITTV 2>/dev/null
 	uci commit dhcp
 	/etc/init.d/dnsmasq restart >/dev/null 2>&1
-	# echo "重启网络" >$REAL_LOG
-	/etc/init.d/network restart >/dev/null 2>&1
-
+	
 	#===========================================================================================================================
 }
 
