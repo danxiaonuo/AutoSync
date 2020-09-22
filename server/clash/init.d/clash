@@ -596,6 +596,8 @@ start() {
 
 				restore >/dev/null 2>&1
 
+				/etc/init.d/firewall reload >/dev/null 2>&1
+
 				if [ "${lang}" == "en" ] || [ $lang == "auto" ]; then
 					echo "Setting Cron Job" >$REAL_LOG
 					add_cron
@@ -892,6 +894,7 @@ stop() {
 	rm -rf $CUSLIST $CUSLITT $CUSLISTV $CUSLITTV 2>/dev/null
 	uci commit dhcp
 	/etc/init.d/dnsmasq restart >/dev/null 2>&1
+	/etc/init.d/firewall reload >/dev/null 2>&1
 
 	#===========================================================================================================================
 }
