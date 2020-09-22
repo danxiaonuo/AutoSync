@@ -34,6 +34,7 @@ revert_dns() {
 		uci delete dhcp.@dnsmasq[0].resolvfile
 		uci set dhcp.@dnsmasq[0].noresolv=1
 		uci set dhcp.@dnsmasq[0].cachesize=0
+		rm -rf $CUSLIST $CUSLITT  $CUSLISTV $CUSLITTV 2>/dev/null
 		uci commit dhcp
 		/etc/init.d/dnsmasq restart
 	fi
