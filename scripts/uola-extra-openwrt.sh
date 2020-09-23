@@ -87,3 +87,4 @@ curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/a
 # 修改smartdns配置文件
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.conf > package/xiaonuo/smartdns/conf/smartdns.conf
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/custom.conf > package/xiaonuo/smartdns/conf/custom.conf
+curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/smartdns_config/files/smartdns.sh > package/base-files/files/sbin/smartdns.sh
