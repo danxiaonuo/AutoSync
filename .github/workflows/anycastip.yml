@@ -56,7 +56,7 @@ jobs:
       run: |
         mkdir -pv anycastip
         curl -fsSL https://anycast.freecdn.workers.dev > anycastip/anycastip.txt
-        chmod 775 anycastip
+        chmod -R 775 anycastip
         
     # 上传到分支
     - name: 上传到分支
