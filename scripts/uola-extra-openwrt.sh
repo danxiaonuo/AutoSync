@@ -7,14 +7,6 @@ cd ../
 rm -rf package/xiaonuo/default-settings
 git clone --depth=1 https://github.com/danxiaonuo/default-settings package/xiaonuo/default-settings
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
-# 增加 luci-theme-argon
-rm -rf package/xiaonuo/luci-theme-argon*
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/xiaonuo/luci-theme-argon
-find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
-# 增加 luci-app-argon-config
-rm -rf package/xiaonuo/luci-app-argon-config
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/xiaonuo/luci-app-argon-config
-find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加 clash
 rm -rf package/xiaonuo/luci-app-clash
 git clone --depth=1 https://github.com/frainzy1477/luci-app-clash.git package/xiaonuo/luci-app-clash
@@ -35,11 +27,6 @@ find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld package/xiaonuo/acld
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 修复 k3
-rm -rf package/xiaonuo/luci-app-k3screenctrl package/xiaonuo/k3screenctrl
-git clone --depth=1 https://github.com/lwz322/luci-app-k3screenctrl.git package/xiaonuo/luci-app-k3screenctrl
-find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
-git clone --depth=1 https://github.com/lwz322/k3screenctrl.git package/xiaonuo/k3screenctrl
-find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 git clone --depth=1 https://github.com/lwz322/k3screenctrl_build.git package/xiaonuo/k3screenctrl_build
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 # 增加版本号
@@ -77,8 +64,8 @@ sed -i 's/none/psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/set wireless.radio${devidx}.hwmode=11/a\\t\t\tset wireless.radio${devidx}.country=CN\n\t\t\tset wireless.radio${devidx}.mu_beamformer=1' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\\t\t\tset wireless.default_radio${devidx}.key=password\n\t\t\tset wireless.default_radio${devidx}.ieee80211k=1' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 启动WIFI
-sed -i '/exit 0/i\# 启动WIFI\nnohup sleep 1 && /sbin/wifi reload &' package/base-files/files/etc/rc.local
-sed -i '/exit 0/i\# 启动MTWIFI\nnohup sleep 1 && /sbin/mtkwifi reload &' package/base-files/files/etc/rc.local
+# sed -i '/exit 0/i\# 启动WIFI\nnohup sleep 1 && /sbin/wifi reload &' package/base-files/files/etc/rc.local
+# sed -i '/exit 0/i\# 启动MTWIFI\nnohup sleep 1 && /sbin/mtkwifi reload &' package/base-files/files/etc/rc.local
 # 修改系统欢迎词
 curl -fsSL https://raw.githubusercontent.com/danxiaonuo/AutoSync/master/server/etc/banner > package/base-files/files/etc/banner
 # 修改系统内核参数
