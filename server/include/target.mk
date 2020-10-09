@@ -15,7 +15,7 @@ DEVICE_TYPE?=router
 # Default packages - the really basic set
 DEFAULT_PACKAGES:=base-files smartdns luci-app-smartdns acld libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd urandom-seed urngd \
 block-mount kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates \
-default-settings luci luci-compat luci-app-autoreboot luci-app-arpbind luci-theme-argon luci-app-argon-config \
+default-settings luci luci-compat luci-app-autoreboot luci-app-arpbind luci-theme-argonv3 luci-app-argon-config \
 luci-app-filetransfer luci-app-vsftpd  luci-app-wol luci-app-ramfree \
 luci-app-turboacc luci-app-nlbwmon luci-app-accesscontrol luci-app-cpufreq
 # For nas targets
