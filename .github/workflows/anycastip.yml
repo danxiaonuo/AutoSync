@@ -34,6 +34,8 @@ env:
    GITHUB_RROJECT: github.com/danxiaonuo/anycastip.git
    # 分支
    BRANCH: master
+   # 自定义执行脚本名称
+   DIY_SH: scripts/cf.sh
    # GITHUB项目路径
    GITHUB_PATH: /home/runner/work/AutoSync/AutoSync/anycastip
    
@@ -55,7 +57,8 @@ jobs:
     - name: 下载anycastip
       run: |
         mkdir -pv anycastip
-        curl -fsSL https://anycast.freecdn.workers.dev > anycastip/anycastip.txt
+        ../$DIY_SH
+        cat ip.txt > anycastip/anycastip.txt
         chmod -R 775 anycastip
         
     # 上传到分支
