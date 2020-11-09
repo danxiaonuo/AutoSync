@@ -57,7 +57,8 @@ jobs:
     - name: 下载anycastip
       run: |
         mkdir -pv anycastip
-        ../$DIY_SH
+        chmod +x $DIY_SH
+        ./$DIY_SH
         cat ip.txt > anycastip/anycastip.txt
         chmod -R 775 anycastip
         
