@@ -15,8 +15,8 @@ on:
      types: [started]
   
 # 每天的晚上3点钟自动更新
-  schedule:
-     - cron: '* */3 * * *'
+#  schedule:
+#     - cron: '* */3 * * *'
      
 # 环境变量
 env:
