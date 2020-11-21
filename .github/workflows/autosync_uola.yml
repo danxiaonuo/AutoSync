@@ -12,11 +12,11 @@ name: 自动同步Uola源码包
 on:
   # 手动触发工作流
   workflow_dispatch:
-# 点击★开始触发更新
+  # 点击★开始触发更新
   watch:  
      types: [started]
   
-# 每周三的晚上3点钟自动更新
+  # 每周三的晚上3点钟自动更新
   schedule:
      - cron: '0 2 * * 3'
      
