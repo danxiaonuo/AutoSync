@@ -21,8 +21,8 @@ rm -rf package/xiaonuo/OpenClash
 find package/xiaonuo/. -type d -iname '.git' | xargs rm -rf
 find package/xiaonuo/luci-app-openclash/. -type d -iname '.svn' | xargs rm -rf
 # 增加net6
-svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
-find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
+#svn co https://github.com/danxiaonuo/AutoSync/trunk/server/net6 package/xiaonuo/net6
+#find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
 # 增加acld权限
 svn co https://github.com/danxiaonuo/AutoSync/trunk/server/acld package/xiaonuo/acld
 find package/xiaonuo/. -type d -iname '.svn' | xargs rm -rf
