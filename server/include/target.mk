@@ -21,7 +21,7 @@ luci-app-turboacc luci-app-nlbwmon luci-app-accesscontrol luci-app-cpufreq
 # For nas targets
 DEFAULT_PACKAGES.nas:=block-mount fdisk lsblk mdadm
 # For router targets
-DEFAULT_PACKAGES.router:=dnsmasq-full net6 iptables ppp ppp-mod-pppoe firewall
+DEFAULT_PACKAGES.router:=dnsmasq-full iptables ppp ppp-mod-pppoe firewall
 DEFAULT_PACKAGES.bootloader:=
 
 ifneq ($(DUMP),)
