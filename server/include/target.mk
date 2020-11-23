@@ -13,11 +13,20 @@ __target_inc=1
 DEVICE_TYPE?=router
 
 # Default packages - the really basic set
-DEFAULT_PACKAGES:=base-files smartdns luci-app-smartdns acld libc libgcc busybox dropbear mtd uci opkg netifd fstools uclient-fetch logd urandom-seed urngd \
-block-mount kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget libustream-openssl ca-certificates \
-default-settings luci luci-compat luci-app-autoreboot luci-app-arpbind luci-theme-argonv3 luci-app-argon-config \
-luci-app-filetransfer luci-app-vsftpd  luci-app-wol luci-app-ramfree \
-luci-app-turboacc luci-app-nlbwmon luci-app-accesscontrol luci-app-cpufreq
+DEFAULT_PACKAGES:=base-files libc libgcc dropbear mtd uci opkg netifd fstools uclient-fetch logd urandom-seed urngd \
+block-mount kmod-nf-nathelper kmod-nf-nathelper-extra kmod-ipt-raw wget curl libustream-openssl ca-certificates \
+default-settings luci-app-turboacc luci-app-autoreboot luci-app-ramfree luci-app-cpufreq \
+smartdns luci-app-smartdns luci-app-filetransfer luci-app-vsftpd \
+luci-app-arpbind luci-app-accesscontrol luci-app-wol luci-app-nlbwmon \
+luci luci-compat luci-theme-argon luci-app-argon-config  \
+luci-app-ddns ddns-scripts_aliyun ddns-scripts_dnspod
+
+ifneq ($(CONFIG_SELINUX),)
+DEFAULT_PACKAGES+=busybox-selinux procd-selinux
+else
+DEFAULT_PACKAGES+=busybox procd
+endif
+
 # For nas targets
 DEFAULT_PACKAGES.nas:=block-mount fdisk lsblk mdadm
 # For router targets
@@ -59,7 +68,7 @@ endif
 DEFAULT_PACKAGES += $(DEFAULT_PACKAGES.$(DEVICE_TYPE))
 
 filter_packages = $(filter-out -% $(patsubst -%,%,$(filter -%,$(1))),$(1))
-extra_packages = $(if $(filter wpad-mini wpad-basic wpad-basic-wolfssl wpad nas,$(1)),iwinfo)
+extra_packages = $(if $(filter wpad wpad-% nas,$(1)),iwinfo)
 
 define ProfileDefault
   NAME:=
@@ -153,11 +162,11 @@ ifeq ($(CONFIG_TARGET),env)
   LINUX_RECONFIG_TARGET = $(TOPDIR)/env/kernel-config
 endif
 
-__linux_confcmd = $(SCRIPT_DIR)/kconfig.pl $(2) $(patsubst %,+,$(wordlist 2,9999,$(1))) $(1)
+__linux_confcmd = $(2) $(patsubst %,+,$(wordlist 2,9999,$(1))) $(1)
 
-LINUX_CONF_CMD = $(call __linux_confcmd,$(LINUX_KCONFIG_LIST),)
-LINUX_RECONF_CMD = $(call __linux_confcmd,$(LINUX_RECONFIG_LIST),)
-LINUX_RECONF_DIFF = $(call __linux_confcmd,$(filter-out $(LINUX_RECONFIG_TARGET),$(LINUX_RECONFIG_LIST)),'>')
+LINUX_CONF_CMD = $(SCRIPT_DIR)/kconfig.pl $(call __linux_confcmd,$(LINUX_KCONFIG_LIST))
+LINUX_RECONF_CMD = $(SCRIPT_DIR)/kconfig.pl $(call __linux_confcmd,$(LINUX_RECONFIG_LIST))
+LINUX_RECONF_DIFF = $(SCRIPT_DIR)/kconfig.pl - '>' $(call __linux_confcmd,$(filter-out $(LINUX_RECONFIG_TARGET),$(LINUX_RECONFIG_LIST))) $(1) $(GENERIC_PLATFORM_DIR)/config-filter
 
 ifeq ($(DUMP),1)
   BuildTarget=$(BuildTargets/DumpCurrent)
@@ -172,6 +181,8 @@ ifeq ($(DUMP),1)
     CPU_CFLAGS += -mno-branch-likely
     CPU_CFLAGS_mips32 = -mips32 -mtune=mips32
     CPU_CFLAGS_mips64 = -mips64 -mtune=mips64 -mabi=64
+    CPU_CFLAGS_mips64r2 = -mips64r2 -mtune=mips64r2 -mabi=64
+    CPU_CFLAGS_4kec = -mips32r2 -mtune=4kec
     CPU_CFLAGS_24kc = -mips32r2 -mtune=24kc
     CPU_CFLAGS_74kc = -mips32r2 -mtune=74kc
     CPU_CFLAGS_octeonplus = -march=octeon+ -mabi=64
