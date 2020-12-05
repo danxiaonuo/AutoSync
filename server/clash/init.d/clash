@@ -597,6 +597,8 @@ start() {
 				/etc/init.d/dnsmasq restart >/dev/null 2>&1
 
 				restore >/dev/null 2>&1
+				
+				check_clash >/dev/null 2>&1
 
 				if [ "${lang}" == "en" ] || [ $lang == "auto" ]; then
 					echo "Setting Cron Job" >$REAL_LOG
@@ -886,7 +888,8 @@ stop() {
 	if pidof clash >/dev/null; then
 		kill $(pidof clash) >/dev/null 2>&1 || kill -9 $(ps | grep clash | grep -v grep | awk '{print $1}') >/dev/null 2>&1
 	fi
-
+	
+    /etc/init.d/firewall restart >/dev/null 2>&1
 	#===========================================================================================================================
 }
 
@@ -910,4 +913,30 @@ reload() {
 		rules 2>/dev/null
 		echo "Clash Reload Completed"
 	fi
+}
+
+check_clash() {
+	#===========================================================================================================================
+	SECRET=$(uci get clash.config.dash_pass 2>/dev/null)
+    LAN_IP=$(uci get network.lan.ipaddr 2>/dev/null |awk -F '/' '{print $1}' 2>/dev/null)
+    PORT=$(uci get clash.config.dash_port 2>/dev/null)
+	/etc/init.d/smartdns restart >/dev/null 2>&1
+	sleep 30
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/default/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/BR/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/CA/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/DE/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/FR/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/GB/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/HK/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/JP/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/KR/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/NL/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/RU/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/SG/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/TW/healthcheck >/dev/null 2>&1
+    curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/US/healthcheck >/dev/null 2>&1
+	curl -s -m 10 --retry-delay 3 --retry 3 -k -H "Authorization: Bearer ${SECRET}" http://"$LAN_IP":"$PORT"/providers/proxies/XIAONUO/healthcheck >/dev/null 2>&1
+    /etc/init.d/firewall restart >/dev/null 2>&1
+	#===========================================================================================================================
 }
